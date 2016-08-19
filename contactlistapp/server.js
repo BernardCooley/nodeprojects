@@ -3,15 +3,23 @@ var app = express();
 var mongojs = require('mongojs');
 var db = mongojs('contactlist', ['contactlist']);
 
+
 app.use(express.static(__dirname = '\public'));
 
 app.get('/contactlist', function (req, res) {
 	console.log("I recieved a get request");
 
-	db.contactlist.find(function (err, docs) {
-		console.log(docs);
+// var cursor = db.contactlists.find({});
+var cursor = db.collection('contactlists').find( );
+	cursor.each(function(err, docs) {
+	console.log(docs);
 		res.json(docs);
 	});
+
+	// db.contactlists.find().toArray(function (err, docs) {
+	// 	console.log(docs);
+	// 	res.json(docs);
+	// });
 
 });
 
