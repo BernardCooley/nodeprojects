@@ -14,7 +14,7 @@
 
 <div class="container" ng-controller="AppCtrl">
 	<h1>Contact List App</h1>
-
+<form name="form" novalidate>
 <table class="table">
 	<thead>
 		<tr>
@@ -27,12 +27,15 @@
 	</thead>
 	<tbody>
 	<tr>
-		<td><input class="form-control" ng-model="contact.name" type="" name=""></td>
-		<td><input class="form-control" ng-model="contact.email" type="" name=""></td>
-		<td><input class="form-control" ng-model="contact.number" type="" name=""></td>
-		<td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
-		<td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;
-		<button class="btn btn-info" ng-click="deselct()">Clear</button></td>
+	
+		<td><input class="form-control" ng-model="contact.name" type="text" name="name" required></td>
+		<td><input class="form-control" ng-model="contact.email" type="email" name="email" required></td>
+		<td><input class="form-control" ng-model="contact.number" type="number" name="number" required></td>
+	
+		
+		<td><button class="btn btn-primary" ng-click="addContact()" ng-disabled="form.$invalid">Add Contact</button></td>
+		<td><button class="btn btn-info" ng-click="update()" ng-disabled="form.$invalid">Update</button>&nbsp;&nbsp;
+		<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
 
 	</tr>
 		<tr ng-repeat="contact in contactlist">
@@ -44,6 +47,7 @@
 		</tr>
 	</tbody>
 </table>
+</form>
 
 
 
