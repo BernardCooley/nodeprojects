@@ -39,7 +39,6 @@ app.get('/tracks/:id', function(req, res) {
 	});
 });
 
-
 app.put('/tracks/:id', function(req, res) {
 	var id = req.params.id;
 	console.log(req.body.Track);
@@ -50,10 +49,6 @@ app.put('/tracks/:id', function(req, res) {
 			res.json(doc);
 		});
 });
-
-
-
-
 
 app.listen(3000);
 console.log("Server running on port 3000");
