@@ -45,6 +45,8 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 		$scope.track = "";
 	};
 
-
+	$scope.dJingPageVis = false;
+	$scope.managementPageVis = false;
+	$scope.helpPageVis = false;
 
 }]);

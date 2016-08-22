@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="myApp" ng-controller="AppCtrl">
 <head>
 
 	<!-- Latest compiled and minified CSS -->
@@ -14,91 +14,85 @@
 
 	<div class="centred"><img class="" src="http://www.harmonixtechnologies.com/wp-content/uploads/2015/06/Harmonix_Logo_Recreated.png"></div>
 
+	
+
+</head>
+
+</head>
+<body>
+
 	<div>
 		<table class="table centred">
 			<thead>
-
 			</thead>
 			<tbody>
 				<tr>
 					<td>
-						<a class="linkText" href="#startdjing">Start DJing</a>
-						<!-- <button class="btn centred" ng-click="" >Start DJing</button> -->
+						<button class="linkText" href="#startdjing" ng-click="dJingPageVis = !dJingPageVis">Start DJing</button>
 					</td>
 					<td>
-						<a class="linkText"  href="#tmanagement">Track Management</a>
-						<!-- <button class="btn centred" ng-click="" >Track Management</button> -->
+						<button class="linkText"  href="#tmanagement" ng-click="managementPageVis = !managementPageVis">Track Management</button>
 					</td>
 					<td>
-						<a class="linkText"  href="#help">Help</a>
-						<!-- <button class="btn centred" ng-click="" >Help</button> -->
+						<button class="linkText"  href="#help" ng-click="helpPageVis = !helpPageVis">Help</button>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 
-	</head>
+	<div class="startDJing centred" ng-show="dJingPageVis">
+		<h1>Start DJing</h1>
+	</div>
 
-</head>
-<body>
-	<div class="container">	
-
-		<div class="startDJing centred">
-			<h1>Start DJing</h1>
-		</div>
-
-		<div class="trackManagement" ng-controller="AppCtrl">
-			<h1 class="centred">Track Management</h1>
-			<form>
-				<table>
-					<thead></thead>
-					<tbody>
-						<tr>
-							<th><input class="form-control" type="text" name="search"></th>
-							<th><button class="btn btn-primary">Search</button></th>
+	<div class="trackManagement" ng-show="managementPageVis">
+		<h1 class="centred">Track Management</h1>
+		<form>
+			<table>
+				<thead></thead>
+				<tbody>
+					<tr>
+						<th><input class="form-control" type="text" name="search"></th>
+						<th><button class="btn btn-primary">Search</button></th>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+		<form name="form" novalidate>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Artist</th>
+						<th>Title</th>
+						<th>Key</th>
+						<th>Action</th>
+						<th>&nbsp;</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input class="form-control" ng-model="track.Artist" type="text" name="Artist" required></td>
+						<td><input class="form-control" ng-model="track.Title" type="text" name="Title" required></td>
+						<td><input class="form-control" ng-model="track.Key" type="text" name="Key" required></td>
+						<td><button class="btn btn-primary" ng-click="addtrack()" ng-disabled="form.$invalid">Add track</button></td>
+						<td><button class="btn btn-info" ng-click="update()" ng-disabled="form.$invalid">Update</button>&nbsp;&nbsp;
+							<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+						</tr>
+						<tr ng-repeat="track in tracks">
+							<td>{{track.Artist}}</td>
+							<td>{{track.Title}}</td>
+							<td>{{track.Key}}</td>
+							<td><button class="btn btn-danger" ng-click="remove(track._id)">Remove</button></td>
+							<td><button class="btn btn-warning" ng-click="edit(track._id)">Edit</button></td>
 						</tr>
 					</tbody>
 				</table>
 			</form>
-			<form name="form" novalidate>
-				<table class="table">
-					<thead>
-						<tr>
-							<th>Artist</th>
-							<th>Title</th>
-							<th>Key</th>
-							<th>Action</th>
-							<th>&nbsp;</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><input class="form-control" ng-model="track.Artist" type="text" name="Artist" required></td>
-							<td><input class="form-control" ng-model="track.Title" type="text" name="Title" required></td>
-							<td><input class="form-control" ng-model="track.Key" type="text" name="Key" required></td>
-							<td><button class="btn btn-primary" ng-click="addtrack()" ng-disabled="form.$invalid">Add track</button></td>
-							<td><button class="btn btn-info" ng-click="update()" ng-disabled="form.$invalid">Update</button>&nbsp;&nbsp;
-								<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
-							</tr>
-							<tr ng-repeat="track in tracks">
-								<td>{{track.Artist}}</td>
-								<td>{{track.Title}}</td>
-								<td>{{track.Key}}</td>
-								<td><button class="btn btn-danger" ng-click="remove(track._id)">Remove</button></td>
-								<td><button class="btn btn-warning" ng-click="edit(track._id)">Edit</button></td>
-							</tr>
-						</tbody>
-					</table>
-				</form>
-			</div>
-
-			<div class="help centred">
-				<h1>Help</h1>
-			</div>
 		</div>
 
-
+		<div class="help centred" ng-show="helpPageVis">
+			<h1>Help</h1>
+		</div>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
