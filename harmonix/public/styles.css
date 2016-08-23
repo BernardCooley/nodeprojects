@@ -1,6 +1,6 @@
 .centred{
 	margin: auto;
-    width: 50%;
+    width: 70%;
     padding: 10px;
 }
 
@@ -20,4 +20,9 @@ body {
 
 .linkText {
 	font-size: 30px;
+}
+
+.searchBox {
+	margin: auto;
+	width: 40%;
 }

@@ -8,7 +8,7 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="../styles.css">
 
 	<title>Harmonix - Home</title>
 
@@ -28,36 +28,59 @@
 			<tbody>
 				<tr>
 					<td>
-						<button class="linkText" href="#startdjing" ng-click="dJingPageVis = !dJingPageVis">Start DJing</button>
+						<button class="linkText" href="#home" ng-click="toshow=1">Home</button>
 					</td>
 					<td>
-						<button class="linkText"  href="#tmanagement" ng-click="managementPageVis = !managementPageVis">Track Management</button>
+						<button class="linkText" href="#startdjing" ng-click="toshow=2">Start DJing</button>
 					</td>
 					<td>
-						<button class="linkText"  href="#help" ng-click="helpPageVis = !helpPageVis">Help</button>
+						<button class="linkText"  href="#tmanagement" ng-click="toshow=3">Track Management</button>
+					</td>
+					<td>
+						<button class="linkText"  href="#help" ng-click="toshow=4">Help</button>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 
-	<div class="startDJing centred" ng-show="dJingPageVis">
-		<h1>Start DJing</h1>
+	<div class="home centred" ng-show="toshow == 1">
+		<h1 class="centred">Home page</h1>
 	</div>
 
-	<div class="trackManagement" ng-show="managementPageVis">
-		<h1 class="centred">Track Management</h1>
-		<form>
-			<table>
-				<thead></thead>
-				<tbody>
+	<div class="startDJing centred" ng-show="toshow == 2">
+		<h1 class="centred">DJ Set</h1>
+		<input class="form-control searchBox" type="text" name="search" ng-model="searchText" placeholder="Search">
+		<br>
+		<form name="form" novalidate>
+			<table class="table">
+				<thead>
 					<tr>
-						<th><input class="form-control" type="text" name="search"></th>
-						<th><button class="btn btn-primary">Search</button></th>
+						<th>Artist</th>
+						<th>Title</th>
+						<th>Key</th>
+						<th>Action</th>
+						<th>&nbsp;</th>
 					</tr>
-				</tbody>
-			</table>
-		</form>
+				</thead>
+				<tbody>
+						<tr ng-repeat="track in tracks | filter:searchText | orderBy : 'Key'" ng-click="clicked">
+							<td><h4>{{track.Artist}}</h4></td>
+							<td><h4>{{track.Title}}</h4></td>
+							<td><h4>{{track.Key}}</h4></td>
+							<td><button class="btn btn-success" ng-click="updateSet()">Add to set list</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+
+
+	</div>
+
+	<div class="trackManagement centred" ng-show="toshow == 3">
+		<h1 class="centred">Track Management</h1>
+		<input class="form-control searchBox" type="text" name="search" ng-model="searchText" placeholder="Search">
+		<br>
 		<form name="form" novalidate>
 			<table class="table">
 				<thead>
@@ -78,7 +101,7 @@
 						<td><button class="btn btn-info" ng-click="update()" ng-disabled="form.$invalid">Update</button>&nbsp;&nbsp;
 							<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
 						</tr>
-						<tr ng-repeat="track in tracks">
+						<tr ng-repeat="track in tracks | filter:searchText | orderBy : 'Key'">
 							<td>{{track.Artist}}</td>
 							<td>{{track.Title}}</td>
 							<td>{{track.Key}}</td>
@@ -90,10 +113,13 @@
 			</form>
 		</div>
 
-		<div class="help centred" ng-show="helpPageVis">
-			<h1>Help</h1>
+		<div class="help centred" ng-show="toshow == 4">
+			<h1 class="centred">Help</h1>
 		</div>
 	</div>
+
+
+
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 	<script src="controllers/controller.js"></script>

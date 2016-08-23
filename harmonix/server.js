@@ -50,5 +50,19 @@ app.put('/tracks/:id', function(req, res) {
 		});
 });
 
+app.updateSet('/tracks/:id', function(req, res) {
+	console.log("update set server function");
+	// var id = req.params.id;
+	// console.log(req.body.Track);
+
+	// db.tracks.findAndModify({query: {_id: mongojs.ObjectId(id)},
+	// 	update: {$set: {Track: req.body.Track, Title: req.body.Title, Key: req.body.Key}},
+	// 	new: true}, function(err, doc) {
+	// 		res.json(doc);
+	// 	});
+});
+
+
+
 app.listen(3000);
 console.log("Server running on port 3000");
