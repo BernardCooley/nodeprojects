@@ -50,6 +50,31 @@
 
 	<div class="startDJing centred" ng-show="toshow == 2">
 		<h1 class="centred">DJ Set</h1>
+
+		<form name="form" novalidate>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Artist</th>
+						<th>Title</th>
+						<th>Key</th>
+						<th>Action</th>
+						<th>&nbsp;</th>
+					</tr>
+				</thead>
+				<tbody>
+						<tr ng-repeat="setTrack in setlist" ng-click="clicked">
+							<td><h4>{{setTrack.Artist}}</h4></td>
+							<td><h4>{{setTrack.Title}}</h4></td>
+							<td><h4>{{setTrack.Key}}</h4></td>
+							<td><button class="btn btn-success" ng-click="updateSet(track.Artist)">Remove from set list</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+
+
+
 		<input class="form-control searchBox" type="text" name="search" ng-model="searchText" placeholder="Search">
 		<br>
 		<form name="form" novalidate>
@@ -68,7 +93,7 @@
 							<td><h4>{{track.Artist}}</h4></td>
 							<td><h4>{{track.Title}}</h4></td>
 							<td><h4>{{track.Key}}</h4></td>
-							<td><button class="btn btn-success" ng-click="updateSet()">Add to set list</button></td>
+							<td><button class="btn btn-success" ng-click="updateSet(track.Artist)">Add to set list</button></td>
 						</tr>
 					</tbody>
 				</table>

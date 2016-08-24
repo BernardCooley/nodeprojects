@@ -2,7 +2,9 @@ var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
 var db = mongojs('tracks', ['tracks']);
+// var db = mongojs('setlist', ['setlist']);
 var bodyParser = require('body-parser');
+
 
 app.use(express.static(__dirname = '\public'));
 app.use(bodyParser.json());
@@ -12,7 +14,7 @@ app.get('/tracks', function (req, res) {
 
 	db.tracks.find(function (err, docs) {
 		console.log(docs);
-		res.json(docs);		
+		res.json(docs);
 	});
 });
 
@@ -49,20 +51,6 @@ app.put('/tracks/:id', function(req, res) {
 			res.json(doc);
 		});
 });
-
-app.updateSet('/tracks/:id', function(req, res) {
-	console.log("update set server function");
-	// var id = req.params.id;
-	// console.log(req.body.Track);
-
-	// db.tracks.findAndModify({query: {_id: mongojs.ObjectId(id)},
-	// 	update: {$set: {Track: req.body.Track, Title: req.body.Title, Key: req.body.Key}},
-	// 	new: true}, function(err, doc) {
-	// 		res.json(doc);
-	// 	});
-});
-
-
 
 app.listen(3000);
 console.log("Server running on port 3000");

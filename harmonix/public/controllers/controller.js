@@ -45,25 +45,6 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 		$scope.track = "";
 	};
 
-	$scope.dJingPageVis = function(dJingPageVis) {
-		$scope.dJingPageVis = false;
-		$scope.managementPageVis = true;
-		$scope.helpPageVis = true;
-	};
-
-	$scope.managementPageVis = function(managementPageVis) {
-		$scope.dJingPageVis = true;
-		$scope.managementPageVis = false;
-		$scope.helpPageVis = true;
-	};
-
-	$scope.helpPageVis = function(helpPageVis) {
-		$scope.dJingPageVis = true;
-		$scope.managementPageVis = true;
-		$scope.helpPageVis = false;
-	};
-
-
 	 $scope.show_me = function (event) {
         var box = event.target.parentElement;
         var article = angular.element(box).find('article');
@@ -78,21 +59,15 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
         }
     };
 
-    $scope.updateSet = function() {
-		console.log("Add track button clicked");
-
-		$http.updateSet('/tracks/' + $scope.track._id, $scope.track).success(function(response) {
-			refresh();
-		});
-
-
-		// $http.put('/tracks/' + $scope.track._id, $scope.track).success(function(response) {
-		// 	refresh();
-		// });
-	};
-
 	$scope.clicked = function() {
 		console.log("Clicked");
+	};
+
+	$scope.updateSet = function(artist) {
+		console.log(artist + " ***********************");
+		// $http.get('/tracks/' + artist).success(function(response) {
+		// 	$scope.track = response;
+		// });
 	};
 	
 	
