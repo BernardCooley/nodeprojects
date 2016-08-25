@@ -46,16 +46,13 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 		});
 	};
 
-	$scope.addToSetList = function() {
-		console.log($scope.setTrack._id);
-		$http.put('/setlist/' + $scope.setTrack._id, $scope.setTrack).success(function(response) {
-			refresh();
+	$scope.addToSetList = function(id) {
+		$http.get('/tracks/' + id).success(function(response) {
+			$scope.track._id = response;
 		});
-	};
-
-	$scope.addToSetList = function() {
-		console.log($scope.setTrack);
-		$http.post('/setlist', $scope.setTrack).success(function(response) {
+		console.log(id);
+		console.log($scope.track._id);
+		$http.post('/setlist', $scope.track).success(function(response) {
 			console.log(response);
 			refresh();
 		});

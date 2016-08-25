@@ -36,9 +36,9 @@ app.post('/tracks', function(req, res) {
 
 app.post('/setlist', function(req, res) {
 	console.log(req.body);
-	db1.setlist.insert(req.body, function(err, doc) {
-		res.json(doc);
-	});
+	// db1.setlist.insert(req.body, function(err, doc) {
+	// 	res.json(doc);
+	// });
 });
 
 app.delete('/tracks/:id', function (req, res) {
