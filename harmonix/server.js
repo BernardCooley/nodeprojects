@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
 var db = mongojs('tracks', ['tracks']);
-// var db = mongojs('setlist', ['setlist']);
+var db1 = mongojs('setlist', ['setlist']);
 var bodyParser = require('body-parser');
 
 
@@ -18,9 +18,25 @@ app.get('/tracks', function (req, res) {
 	});
 });
 
+app.get('/setlist', function (req, res) {
+	console.log("I recieved a get request");
+
+	db1.setlist.find(function (err, docs) {
+		console.log(docs);
+		res.json(docs);
+	});
+});
+
 app.post('/tracks', function(req, res) {
 	console.log(req.body);
 	db.tracks.insert(req.body, function(err, doc) {
+		res.json(doc);
+	});
+});
+
+app.post('/setlist', function(req, res) {
+	console.log(req.body);
+	db1.setlist.insert(req.body, function(err, doc) {
 		res.json(doc);
 	});
 });
@@ -51,6 +67,8 @@ app.put('/tracks/:id', function(req, res) {
 			res.json(doc);
 		});
 });
+
+
 
 app.listen(3000);
 console.log("Server running on port 3000");

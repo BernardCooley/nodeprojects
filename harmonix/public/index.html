@@ -49,7 +49,7 @@
 	</div>
 
 	<div class="startDJing centred" ng-show="toshow == 2">
-		<h1 class="centred">DJ Set</h1>
+		<h1 class="centred">Set List</h1>
 
 		<form name="form" novalidate>
 			<table class="table">
@@ -93,7 +93,7 @@
 							<td><h4>{{track.Artist}}</h4></td>
 							<td><h4>{{track.Title}}</h4></td>
 							<td><h4>{{track.Key}}</h4></td>
-							<td><button class="btn btn-success" ng-click="updateSet(track.Artist)">Add to set list</button></td>
+							<td><button class="btn btn-success" ng-click="addToSetList()">Add to set list</button></td>
 						</tr>
 					</tbody>
 				</table>

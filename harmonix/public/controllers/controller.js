@@ -3,6 +3,11 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 	console.log("Hello World from controller");
 
 	var refresh = function() {
+		$http.get('/setlist').success(function(response) {
+			console.log("I got the data i requested");
+			$scope.setlist = response;
+			$scope.setTrack = "";
+		});
 		$http.get('/tracks').success(function(response) {
 			console.log("I got the data i requested");
 			$scope.tracks = response;
@@ -41,6 +46,21 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 		});
 	};
 
+	$scope.addToSetList = function() {
+		console.log($scope.setTrack._id);
+		$http.put('/setlist/' + $scope.setTrack._id, $scope.setTrack).success(function(response) {
+			refresh();
+		});
+	};
+
+	$scope.addToSetList = function() {
+		console.log($scope.setTrack);
+		$http.post('/setlist', $scope.setTrack).success(function(response) {
+			console.log(response);
+			refresh();
+		});
+	};
+
 	$scope.deselect = function() {
 		$scope.track = "";
 	};
@@ -61,13 +81,6 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 
 	$scope.clicked = function() {
 		console.log("Clicked");
-	};
-
-	$scope.updateSet = function(artist) {
-		console.log(artist + " ***********************");
-		// $http.get('/tracks/' + artist).success(function(response) {
-		// 	$scope.track = response;
-		// });
 	};
 	
 	
