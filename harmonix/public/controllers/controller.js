@@ -3,6 +3,7 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 	console.log("Hello World from controller");
 
 	// $scope.ngModelVar = searchText;
+	$scope.toshow = 1;
 
 	var refreshSetlist = function() {
 		$http.get('/setlist').success(function(response) {
@@ -44,8 +45,6 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 			$scope.track = response.Key;
 			console.log(response.Key);
 		});
-
-
 	};
 
 	$scope.remove = function(id) {
