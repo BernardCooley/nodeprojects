@@ -2,12 +2,17 @@ var myApp = angular.module('myApp', []);
 myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 	console.log("Hello World from controller");
 
-	var refresh = function() {
+	// $scope.ngModelVar = searchText;
+
+	var refreshSetlist = function() {
 		$http.get('/setlist').success(function(response) {
 			console.log("I got the data i requested");
 			$scope.setlist = response;
 			$scope.setTrack = "";
 		});
+	};
+
+	var refreshTracks = function() {
 		$http.get('/tracks').success(function(response) {
 			console.log("I got the data i requested");
 			$scope.tracks = response;
@@ -15,7 +20,8 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 		});
 	};
 
-	refresh();
+	refreshSetlist();
+	refreshTracks();
 	$scope.showBtn = true;
 	$scope.hideBtn = false;
 
@@ -23,7 +29,8 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 		console.log($scope.track);
 		$http.post('/tracks', $scope.track).success(function(response) {
 			console.log(response);
-			refresh();
+			refreshSetlist();
+			refreshTracks();
 		});
 	};
 
@@ -32,22 +39,28 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 			console.log(response);
 			$http.post('/setlist', {Artist: response.Artist, Title: response.Title, Key: response.Key}).success(function(response) {
 				console.log(response);
-				refresh();
+				refreshSetlist();
 			});
+			$scope.track = response.Key;
+			console.log(response.Key);
 		});
+
+
 	};
 
 	$scope.remove = function(id) {
 		console.log(id);
 		$http.delete('/tracks/' + id).success(function(response) {
-			refresh();
+			refreshSetlist();
+			refreshTracks();
 		});
 	};
 
 	$scope.removeFromSL = function(id, err) {
 		console.log(id);
 		$http.delete('/setlist/' + id).success(function(response) {
-			refresh();
+			refreshSetlist();
+			refreshTracks();
 		});
 	};
 
@@ -66,7 +79,8 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 		$http.put('/tracks/' + $scope.track._id, $scope.track).success(function(response) {
 			$scope.showBtn = true;
 			$scope.hideBtn = false;
-			refresh();
+			refreshSetlist();
+			refreshTracks();
 		});
 	};
 
