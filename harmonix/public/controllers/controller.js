@@ -30,7 +30,7 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 	$scope.addToSL = function(id) {
 		$http.get('/tracks/' + id).success(function(response) {
 			console.log(response);
-			$http.post('/setlist', response).success(function(response) {
+			$http.post('/setlist', {Artist: response.Artist, Title: response.Title, Key: response.Key}).success(function(response) {
 				console.log(response);
 				refresh();
 			});
@@ -44,7 +44,7 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 		});
 	};
 
-	$scope.removeFromSL = function(id) {
+	$scope.removeFromSL = function(id, err) {
 		console.log(id);
 		$http.delete('/setlist/' + id).success(function(response) {
 			refresh();

@@ -48,7 +48,7 @@ app.delete('/tracks/:id', function (req, res) {
 	});
 });
 
-app.delete('/setlist/:id', function (req, res) {
+app.delete('/setlist/:id', function (req, res, err) {
 	var id = req.params.id;
 	console.log(id);
 	db1.setlist.remove({_id: mongojs.ObjectId(id)}, function(err, doc) {

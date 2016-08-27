@@ -12,7 +12,7 @@
 
 	<title>Harmonix - Home</title>
 
-	<div class="centred"><img class="" src="http://www.harmonixtechnologies.com/wp-content/uploads/2015/06/Harmonix_Logo_Recreated.png"></div>
+	<div class="container"><img class="" src="http://www.harmonixtechnologies.com/wp-content/uploads/2015/06/Harmonix_Logo_Recreated.png"></div>
 
 	
 
@@ -20,9 +20,8 @@
 
 </head>
 <body>
-
-	<div>
-		<table class="table centred">
+	<div class="container">
+		<table class="table">
 			<thead>
 			</thead>
 			<tbody>
@@ -44,12 +43,12 @@
 		</table>
 	</div>
 
-	<div class="home centred" ng-show="toshow == 1">
-		<h1 class="centred">Home page</h1>
+	<div class="container" ng-show="toshow == 1">
+		<h1 class="">Home page</h1>
 	</div>
 
-	<div class="startDJing centred" ng-show="toshow == 2">
-		<h1 class="centred">Set List</h1>
+	<div class="container" ng-show="toshow == 2">
+		<h1 class="">Set List</h1>
 
 		<form name="form" novalidate>
 			<table class="table">
@@ -93,7 +92,7 @@
 						<td><h4>{{track.Artist}}</h4></td>
 						<td><h4>{{track.Title}}</h4></td>
 						<td><h4>{{track.Key}}</h4></td>
-						<td><button class="btn btn-success" ng-click="addToSL(track._id)">Add to set list</button></td>
+						<td><button class="btn btn-success" ng-click="addToSL(track._id); showCompTracks(track._id)">Add to set list</button></td>
 					</tr>
 				</tbody>
 			</table>
@@ -102,8 +101,8 @@
 
 	</div>
 
-	<div class="trackManagement centred" ng-show="toshow == 3">
-		<h1 class="centred">Track Management</h1>
+	<div class="container" ng-show="toshow == 3">
+		<h1 class="">Track Management</h1>
 		<input class="form-control searchBox" type="text" name="search" ng-model="searchText" placeholder="Search">
 		<br>
 		<form name="form" novalidate>
@@ -139,8 +138,8 @@
 		</form>
 	</div>
 
-	<div class="help centred" ng-show="toshow == 4">
-		<h1 class="centred">Help</h1>
+	<div class="container" ng-show="toshow == 4">
+		<h1 class="">Help</h1>
 	</div>
 </div>
 
