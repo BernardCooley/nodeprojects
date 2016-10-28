@@ -1,6 +1,5 @@
-var myApp = angular.module('myApp', []);
-myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
-	console.log("Hello World from controller");
+myApp.controller('TrackManagementController', ['$scope', '$http', function($scope, $http) {
+	console.log("Track management controller");
 
 	var refreshSetlist = function() {
 		$http.get('/setlist').success(function(response) {
@@ -32,29 +31,9 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 		});
 	};
 
-	$scope.addToSL = function(id) {
-		$http.get('/tracks/' + id).success(function(response) {
-			console.log(response);
-			$http.post('/setlist', {Artist: response.Artist, Title: response.Title, Key: response.Key}).success(function(response) {
-				console.log(response);
-				refreshSetlist();
-			});
-			$scope.track = response.Key;
-			console.log(response.Key);
-		});
-	};
-
 	$scope.remove = function(id) {
 		console.log(id);
 		$http.delete('/tracks/' + id).success(function(response) {
-			refreshSetlist();
-			refreshTracks();
-		});
-	};
-
-	$scope.removeFromSL = function(id, err) {
-		console.log(id);
-		$http.delete('/setlist/' + id).success(function(response) {
 			refreshSetlist();
 			refreshTracks();
 		});
@@ -85,18 +64,4 @@ myApp.controller('AppCtrl', ['$scope', '$http', function($scope, $http) {
 		$scope.showBtn = true;
 		$scope.hideBtn = false;
 	};
-
-	$scope.show_me = function (event) {
-		var box = event.target.parentElement;
-		var article = angular.element(box).find('article');
-		var articles = angular.element(box.parentElement).find('article');
-        // if already shown, hide it
-        if (article.hasClass('show'))
-        	article.removeClass('show');
-        else // elsif not shown, hide all and show it
-        {
-        	articles.removeClass('show');
-        	article.addClass('show');
-        }
-    };
 }]);

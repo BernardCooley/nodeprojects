@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp" ng-controller="AppCtrl">
+<html data-ng-app="myApp" ng-controller="MainController">
 <head>
 
 	<!-- Latest compiled and minified CSS -->
@@ -20,6 +20,9 @@
 
 </head>
 <body>
+
+
+
 	<div class="container">
 		<table class="table">
 			<thead>
@@ -27,23 +30,26 @@
 			<tbody>
 				<tr>
 					<td>
-						<button class="linkText" href="#home" ng-click="toshow=1">Log In</button>
+						<a href="#/playSet"><button class="linkText">Start DJing</button></a>
 					</td>
 					<td>
-						<button class="linkText" href="#startdjing" ng-click="toshow=2">Start DJing</button>
+						<a href="#/trackManagement"><button class="linkText">Track Management</button></a>
 					</td>
 					<td>
-						<button class="linkText" href="#tmanagement" ng-click="toshow=3">Track Management</button>
-					</td>
-					<td>
-						<button class="linkText"  href="#help" ng-click="toshow=4">Help</button>
+						<a href="#/help"><button class="linkText">Help</button></a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 
-	<div class="container" ng-show="toshow == 1">
+	<div class="container">
+	<ng-view></ng-view>
+</div>
+
+	
+
+<!-- 	<div class="container" ng-show="toshow == 1">
 		<h1 class="">Log In Page</h1>
 
 		<button class="btn btn-info" ng-click="logInShow = 1">Sign Up</button>
@@ -83,6 +89,7 @@
 			</table>
 		</form>
 	</div>
+
 	<div class="container" ng-show="logInShow == 2">
 
 		<br>
@@ -98,11 +105,9 @@
 			<button class="btn btn-info" ng-click="" ng-disabled="form.$invalid">Sign Up</button>
 		</form>
 
-	</div>
+	</div> -->
 
-</div>
-
-<div class="container" ng-show="toshow == 2">
+<!-- <div class="container" ng-show="toshow == 2">
 	<h1 class="">Set List</h1>
 
 	<form name="form" novalidate>
@@ -155,9 +160,9 @@
 	</form>
 
 
-</div>
+</div> -->
 
-<div class="container" ng-show="toshow == 3">
+<!-- <div class="container" ng-show="toshow == 3">
 	<h1 class="">Track Management</h1>
 	<input class="form-control searchBox" type="text" name="search" ng-model="searchText" placeholder="Search">
 	<br>
@@ -192,19 +197,23 @@
 			</tbody>
 		</table>
 	</form>
-</div>
+</div> -->
 
-<div class="container" ng-show="toshow == 4">
+<!-- <div class="container" ng-show="toshow == 4">
 	<h1 class="">Help</h1>
-</div>
-</div>
+</div> -->
 
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-<script src="controllers/controller.js"></script>
-<script src="js/app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+<script src="controllers/mainController.js"></script>
+<script src="controllers/trackManagementController.js"></script>
+<script src="controllers/playSetController.js"></script>
+<script src="controllers/helpController.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.js"></script>
 </body>
 </html>
