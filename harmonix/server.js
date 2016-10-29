@@ -3,6 +3,7 @@ var app = express();
 var mongojs = require('mongojs');
 var db = mongojs('tracks', ['tracks']);
 var db1 = mongojs('setlist', ['setlist']);
+var db2 = mongojs('users', ['users']);
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname = '\public'));
@@ -29,6 +30,13 @@ app.get('/setlist', function (req, res) {
 app.post('/tracks', function(req, res) {
 	console.log(req.body);
 	db.tracks.insert(req.body, function(err, doc) {
+		res.json(doc);
+	});
+});
+
+app.post('/users', function(req, res) {
+	console.log(req.body);
+	db2.users.insert(req.body, function(err, doc) {
 		res.json(doc);
 	});
 });
@@ -60,6 +68,14 @@ app.get('/tracks/:id', function(req, res) {
 	var id = req.params.id;
 	console.log(id);
 	db.tracks.findOne({_id: mongojs.ObjectId(id)}, function(err, doc) {
+		res.json(doc);
+	});
+});
+
+app.get('/users/:email', function(req, res) {
+	var email = req.params.email;
+	console.log(email);
+	db2.users.findOne({email: email}, function(err, doc) {
 		res.json(doc);
 	});
 });

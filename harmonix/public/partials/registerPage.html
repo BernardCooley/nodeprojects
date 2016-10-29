@@ -1,0 +1,29 @@
+<div class="container" ng-show="show">
+		<form name="registerForm" novalidate>
+
+			<h2>Registration</h2>
+			<span>All fields required</span>
+			<br>
+			<br>
+			<label>First Name</label>
+			<br>
+			<input class="form-control" type="text" ng-model="user.fName" name="fName" required placeholder="First Name">
+			<br>
+			<label>Last Name</label>
+			<input class="form-control" type="text" ng-model="user.lName" name="user.lName" required placeholder="Last Name">
+			<br>
+			<label>Email</label>
+			<input class="form-control" ng-model="user.email" ng-change="validateEmail(user.email)" type="emailAddress" name="emailAddress" required placeholder="Email">
+			<br>
+			<label>Username</label>
+			<input class="form-control" ng-model="user.username" ng-change="validateUsername(user.username)" type="text" name="userName" required placeholder="Username">
+			<br>
+			<label>Password</label>
+			<input class="form-control" type="password" ng-model="user.password" name="password" required placeholder="Password">
+			<br>
+			<button class="btn btn-info" ng-click="addUser(user)" ng-disabled="registerForm.$invalid">Register</button>
+			<br>
+			<br>
+			<a href="#/signIn">Already registered?......<strong>Log In</strong></a>
+	</form>
+</div>

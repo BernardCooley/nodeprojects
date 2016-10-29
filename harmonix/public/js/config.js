@@ -1,8 +1,16 @@
 myApp.config(function ($routeProvider) {     
 	$routeProvider
 	.when('/', {
-		templateUrl : 'partials/logInPage.html',
+		templateUrl : 'partials/signInRegisterPage.html',
 		controller : 'MainController'
+	})
+	.when('/signIn', {
+		templateUrl : 'partials/signInPage.html',
+		controller : 'LogInController'
+	})
+	.when('/register', {
+		templateUrl : 'partials/registerPage.html',
+		controller : 'RegisterController'
 	})
 	.when('/playSet', {
 		templateUrl : 'partials/playSetPage.html',
