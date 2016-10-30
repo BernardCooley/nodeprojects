@@ -80,6 +80,14 @@ app.get('/users/:email', function(req, res) {
 	});
 });
 
+app.get('/users/:username', function(req, res) {
+	var username = req.params.username;
+	console.log(username);
+	db2.users.findOne({username: username}, function(err, doc) {
+		res.json(doc);
+	});
+});
+
 app.put('/tracks/:id', function(req, res) {
 	var id = req.params.id;
 	console.log(req.body.Track);

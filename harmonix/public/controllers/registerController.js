@@ -11,10 +11,24 @@ myApp.controller('RegisterController', ['$scope', '$http', function($scope, $htt
 	$scope.validateEmail = function(email) {
 		console.log("Validate email called");
 		$http.get('/users/' + email).success(function(response) {
-			console.log("I got the data i requested");
 			if(response != null) {
-				console.log("Email already exists");
+				$scope.emailExistsMsg = response.email + " already exists";
+			} else {
+				$scope.emailExistsMsg = "";
 			}
 		});
 	};
+
+	// $scope.validateUsername = function(username) {
+	// 	console.log("Validate username called");
+	// 	$http.get('/users/' + username).success(function(response) {
+	// 		console.log(response.username);
+	// 		if(response != null) {
+	// 			console.log(response.username + " already exists");
+	// 			$scope.usernameExistsMsg = response.username + " already exists";
+	// 		} else {
+	// 			$scope.usernameExistsMsg = "";
+	// 		}
+	// 	});
+	// };
 }]);

@@ -8,18 +8,43 @@
 			<label>First Name</label>
 			<br>
 			<input class="form-control" type="text" ng-model="user.fName" name="fName" required placeholder="First Name">
+			<div ng-messages="registerForm.fName.$error">
+				<div class="errorMsg" ng-message="required">Required</div>
+			</div>
+			
 			<br>
 			<label>Last Name</label>
-			<input class="form-control" type="text" ng-model="user.lName" name="user.lName" required placeholder="Last Name">
+			<input class="form-control" type="text" ng-model="user.lName" name="lName" required placeholder="Last Name">
+			<div ng-messages="registerForm.lName.$error">
+				<div class="errorMsg" ng-message="required">Required</div>
+			</div>
+
 			<br>
 			<label>Email</label>
-			<input class="form-control" ng-model="user.email" ng-change="validateEmail(user.email)" type="emailAddress" name="emailAddress" required placeholder="Email">
+			<input class="form-control" ng-model="user.email" ng-change="validateEmail(user.email)" type="email" name="emailAdd" required placeholder="Email">
+			<span class="errorMsg">{{emailExistsMsg}}</span>
+
+			<div ng-messages="registerForm.emailAdd.$error">
+				<div class="errorMsg" ng-message="email">Invalid email address</div>
+				<div class="errorMsg" ng-message="required">Required</div>
+			</div>
+
 			<br>
 			<label>Username</label>
-			<input class="form-control" ng-model="user.username" ng-change="validateUsername(user.username)" type="text" name="userName" required placeholder="Username">
+			<input class="form-control" ng-model="user.username" ng-change="validateUsername(user.username)" type="text" name="uName" required placeholder="Username">
+			<span class="errorMsg">{{usernameExistsMsg}}</span>
+			<div ng-messages="registerForm.uName.$error">
+				<div class="errorMsg" ng-message="required">Required</div>
+			</div>
+
 			<br>
 			<label>Password</label>
-			<input class="form-control" type="password" ng-model="user.password" name="password" required placeholder="Password">
+			<input class="form-control" ng-minlength="6" type="password" ng-model="user.password" name="password" required placeholder="Password">
+			<div ng-messages="registerForm.password.$error">
+				<div class="errorMsg" ng-message="minlength">Password should be 6 character minimum</div>
+				<div class="errorMsg" ng-message="required">Required</div>
+			</div>
+
 			<br>
 			<button class="btn btn-info" ng-click="addUser(user)" ng-disabled="registerForm.$invalid">Register</button>
 			<br>
