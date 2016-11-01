@@ -1,5 +1,5 @@
-myApp.controller('LogInController', ['$scope', '$http', function($scope, $http) {
-	console.log("Log in controller");
+myApp.controller('SignInController', ['$scope', '$http', function($scope, $http) {
+	console.log("Sign in controller");
 
 	$scope.logIn = function(username, password) {
 		console.log("Log in called");

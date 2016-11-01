@@ -6,7 +6,7 @@ myApp.config(function ($routeProvider) {
 	})
 	.when('/signIn', {
 		templateUrl : 'partials/signInPage.html',
-		controller : 'LogInController'
+		controller : 'SignInController'
 	})
 	.when('/register', {
 		templateUrl : 'partials/registerPage.html',
@@ -22,6 +22,10 @@ myApp.config(function ($routeProvider) {
 	})
 	.when('/help', {
 		templateUrl : 'partials/helpPage.html',
+		controller : 'RegisterController'
+	})
+	.when('/registrationStatus', {
+		templateUrl : 'partials/registrationStatusPage.html',
 		controller : 'HelpController'
 	})
 	.otherwise(
