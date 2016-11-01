@@ -1,21 +1,19 @@
-myApp.controller('SignInController', ['$scope', '$http', function($scope, $http) {
+myApp.controller('SignInController', ['$scope', '$http', '$location', function($scope, $http, $location) {
 	console.log("Sign in controller");
 
 	$scope.logIn = function(username, password) {
-		console.log("Log in called");
+		console.log("Sign in called");
 
 		$http.get('/users/' + username).success(function(response) {
 			if(response != null) {
-				$scope.emailExistsMsg = response.email + " already exists";
+				if(username == response.username && password == response.password) {
+					console.log("Successful log in");
+					this.isDisabled = false;
+					$location.path("/playSet");
+				}
 			} else {
-				$scope.emailExistsMsg = "";
+				console.log("User not found: " + response);
 			}
 		});
-
-
-
-
-
 	};
-	
 }]);

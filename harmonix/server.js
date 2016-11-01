@@ -72,13 +72,13 @@ app.get('/tracks/:id', function(req, res) {
 	});
 });
 
-app.get('/users/:email', function(req, res) {
-	var email = req.params.email;
-	console.log("Existing email validation: " + email);
-	db2.users.findOne({email: email}, function(err, doc) {
-		res.json(doc);
-	});
-});
+// app.get('/users/:email', function(req, res) {
+// 	var email = req.params.email;
+// 	console.log("Existing email validation: " + email);
+// 	db2.users.findOne({email: email}, function(err, doc) {
+// 		res.json(doc);
+// 	});
+// });
 
 // app.get('/users/:fname', function(req, res) {
 // 	var fname = req.params.fname;
@@ -88,14 +88,13 @@ app.get('/users/:email', function(req, res) {
 // 	});
 // });
 
-// app.get('/users/:username', function(req, res) {
-// 	// console.log("User: " + user.username);
-// 	var username = req.params.username;
-// 	// console.log("User: " + username);
-// 	db2.users.findOne({username: username}, function(err, doc) {
-// 		res.json(doc);
-// 	});
-// });
+app.get('/users/:username', function(req, res) {
+	var username = req.params.username;
+	console.log("User: " + username);
+	db2.users.findOne({username: username}, function(err, doc) {
+		res.json(doc);
+	});
+});
 
 /*app.get('/users/:username', function(req, res) {
 	var username = req.params.username;
