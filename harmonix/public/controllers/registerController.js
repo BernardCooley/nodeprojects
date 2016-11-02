@@ -1,4 +1,4 @@
-myApp.controller('RegisterController', ['$scope', '$http', '$location', function($scope, $http, $location) {
+myApp.controller('RegisterController', ['$scope', '$http', '$location', function($scope, $http, $location, $rootScope) {
 	console.log("Register controller");
 
 	$scope.addUser = function(user) {
@@ -39,7 +39,8 @@ myApp.controller('RegisterController', ['$scope', '$http', '$location', function
 				$scope.registrationMsg = "Congratulations " + email + ". Registration successful";
 				console.log($scope.registrationMsg);
 				$location.path("/registrationStatus");
-
+				// $showLoginBtn = true;
+				$rootScope.loginBtn = true;
 			} else {
 				console.log("Registration not successful: " + response);
 				$scope.registrationMsg = "Error with registration. Please try again or contact administrator.";
