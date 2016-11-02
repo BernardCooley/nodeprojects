@@ -4,7 +4,7 @@ myApp.controller('SignInController', ['$scope', '$http', '$location', function($
 	$scope.logIn = function(username, password) {
 		console.log("Sign in called");
 
-		$http.get('/users/' + username).success(function(response) {
+		$http.get('/users/username/' + username).success(function(response) {
 			if(response != null) {
 				if(username == response.username && password == response.password) {
 					console.log("Successful log in");

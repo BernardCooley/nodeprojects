@@ -72,13 +72,13 @@ app.get('/tracks/:id', function(req, res) {
 	});
 });
 
-// app.get('/users/:email', function(req, res) {
-// 	var email = req.params.email;
-// 	console.log("Existing email validation: " + email);
-// 	db2.users.findOne({email: email}, function(err, doc) {
-// 		res.json(doc);
-// 	});
-// });
+app.get('/users/email/:email', function(req, res) {
+	var email = req.params.email;
+	console.log("Existing email validation: " + email);
+	db2.users.findOne({email: email}, function(err, doc) {
+		res.json(doc);
+	});
+});
 
 // app.get('/users/:fname', function(req, res) {
 // 	var fname = req.params.fname;
@@ -88,31 +88,12 @@ app.get('/tracks/:id', function(req, res) {
 // 	});
 // });
 
-app.get('/users/:username', function(req, res) {
+app.get('/users/username/:username', function(req, res) {
 	var username = req.params.username;
 	console.log("User: " + username);
 	db2.users.findOne({username: username}, function(err, doc) {
 		res.json(doc);
 	});
-});
-
-/*app.get('/users/:username', function(req, res) {
-	var username = req.params.username;
-	console.log(username);
-	db2.users.findOne({username: username}, function(err, doc) {
-		res.json(doc);
-	});
-});*/
-
-app.put('/tracks/:id', function(req, res) {
-	var id = req.params.id;
-	console.log(req.body.Track);
-
-	db.tracks.findAndModify({query: {_id: mongojs.ObjectId(id)},
-		update: {$set: {Artist: req.body.Artist, Title: req.body.Title, Key: req.body.Key}},
-		new: true}, function(err, doc) {
-			res.json(doc);
-		});
 });
 
 app.listen(3000);
