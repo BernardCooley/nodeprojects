@@ -27,9 +27,6 @@ myApp.config(function ($routeProvider, $locationProvider) {
 	.when('/registrationStatus', {
 		templateUrl : 'views/registrationStatus.html'
 	})
-	.when('/navigation', {
-		templateUrl : 'views/navigation.html'
-	})
 	.otherwise(
 	{
 		templateUrl : '<div>No Page</div>'

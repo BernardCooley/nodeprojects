@@ -30,3 +30,7 @@ body {
 .errorMsg {
 	color: red;
 }
+
+.container {
+  transition: all linear 0.0s;
+}

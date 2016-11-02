@@ -8,7 +8,8 @@ myApp.controller('SignInController', ['$scope', '$http', '$location', function($
 			if(response != null) {
 				if(username == response.username && password == response.password) {
 					console.log("Successful log in");
-					this.isDisabled = false;
+					$scope.navDisabled = true;
+					console.log($scope.navDisabled);
 					$location.path("/playSet");
 				}
 			} else {

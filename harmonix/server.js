@@ -80,13 +80,13 @@ app.get('/users/email/:email', function(req, res) {
 	});
 });
 
-// app.get('/users/:fname', function(req, res) {
-// 	var fname = req.params.fname;
-// 	console.log("Existing fname validation: " + fname);
-// 	db2.users.findOne({fname: fname}, function(err, doc) {
-// 		res.json(doc);
-// 	});
-// });
+app.get('/users/fname/:fname', function(req, res) {
+	var fname = req.params.fname;
+	console.log("Existing fname validation: " + fname);
+	db2.users.findOne({fname: fname}, function(err, doc) {
+		res.json(doc);
+	});
+});
 
 app.get('/users/username/:username', function(req, res) {
 	var username = req.params.username;
