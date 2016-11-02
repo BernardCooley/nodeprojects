@@ -1,34 +1,34 @@
 myApp.config(function ($routeProvider, $locationProvider) {     
 	$routeProvider
 	.when('/', {
-		templateUrl : 'partials/signInRegisterPage.html',
+		templateUrl : 'views/signInRegister.html',
 		controller : 'MainController'
 	})
 	.when('/signIn', {
-		templateUrl : 'partials/signInPage.html',
+		templateUrl : 'views/signIn.html',
 		controller : 'SignInController'
 	})
 	.when('/register', {
-		templateUrl : 'partials/registerPage.html',
+		templateUrl : 'views/register.html',
 		controller : 'RegisterController'
 	})
 	.when('/playSet', {
-		templateUrl : 'partials/playSetPage.html',
+		templateUrl : 'views/playSet.html',
 		controller : 'PlaySetController'
 	})
 	.when('/trackManagement', {
-		templateUrl : 'partials/trackManagementPage.html',
+		templateUrl : 'views/trackManagement.html',
 		controller : 'TrackManagementController'
 	})
 	.when('/help', {
-		templateUrl : 'partials/helpPage.html',
+		templateUrl : 'views/help.html',
 		controller : 'RegisterController'
 	})
 	.when('/registrationStatus', {
-		templateUrl : 'partials/registrationStatusPage.html'
+		templateUrl : 'views/registrationStatus.html'
 	})
 	.when('/navigation', {
-		templateUrl : 'partials/navigation.html'
+		templateUrl : 'views/navigation.html'
 	})
 	.otherwise(
 	{

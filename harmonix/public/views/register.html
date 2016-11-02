@@ -21,19 +21,19 @@
 
 			<br>
 			<label>Email</label>
-			<input class="form-control" ng-model="user.email" ng-change="validateEmail(user.email)" type="email" name="emailAdd" required placeholder="Email">
+			<input class="form-control" name="email" ng-model="user.email" ng-change="duplicateEmail(user.email, registerForm)" type="email" required placeholder="Email">
 			<span class="errorMsg">{{emailExistsMsg}}</span>
 
-			<div ng-messages="registerForm.emailAdd.$error">
+			<div ng-messages="registerForm.email.$error">
 				<div class="errorMsg" ng-message="email">Invalid email address</div>
 				<div class="errorMsg" ng-message="required">Required</div>
 			</div>
 
 			<br>
 			<label>Username</label>
-			<input class="form-control" ng-model="user.username" ng-change="validateUsername(user.username)" type="text" name="uName" required placeholder="Username">
+			<input class="form-control" ng-model="user.username" ng-change="duplicateUsername(user.username, registerForm)" type="text" name="username" required placeholder="Username">
 			<span class="errorMsg">{{usernameExistsMsg}}</span>
-			<div ng-messages="registerForm.uName.$error">
+			<div ng-messages="registerForm.username.$error">
 				<div class="errorMsg" ng-message="required">Required</div>
 			</div>
 

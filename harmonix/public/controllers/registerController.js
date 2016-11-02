@@ -49,4 +49,34 @@ myApp.controller('RegisterController', ['$scope', '$http', '$location', function
 			}
 		});
 	};
+
+	$scope.duplicateEmail = function(email, registerForm) {
+		if (email !== undefined){
+			$http.get('/users/email/' + email).success(function(response) {
+				if(response != null) {
+					$scope.emailExistsMsg = response.email + " already registered";
+					registerForm.email.$setValidity("unique", false);
+				} else {
+					$scope.emailExistsMsg = "";
+					registerForm.email.$setValidity("unique", true);
+				}
+			});
+		}
+    };
+
+    $scope.duplicateUsername = function(username, registerForm) {
+		if (username !== undefined){
+			$http.get('/users/username/' + username).success(function(response) {
+				if(response != null) {
+					$scope.usernameExistsMsg = response.username + " already exists. Please choose a different username";
+					registerForm.username.$setValidity("unique", false);
+				} else {
+					$scope.usernameExistsMsg = "";
+					registerForm.username.$setValidity("unique", true);
+				}
+			});
+		}
+    };
+
+
 }]);
