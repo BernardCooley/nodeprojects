@@ -5,5 +5,10 @@ myApp.controller('MainController', function ($scope, $http){
 	$scope.isDisabled = true;
 	$scope.show = true;
 	$showLoginBtn = false;
+	$scope.registerFormShow = true;
+	$scope.registerStatusShow = false;
+	$scope.loginBtn = false;
+	$scope.successShow = false;
+	$scope.failureShow = false;
 	// $scope.navShow = true;
 });

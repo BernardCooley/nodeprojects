@@ -1,9 +1,10 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('tracks', ['tracks']);
-var db1 = mongojs('setlist', ['setlist']);
-var db2 = mongojs('users', ['users']);
+// var db = mongojs('tracks', ['tracks']);
+// var db = mongojs('setlist', ['setlist']);
+// var db = mongojs('users', ['users']);
+var db = mongojs('harmonixDB', ['harmonixDB']);
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname = '\public'));
@@ -21,7 +22,7 @@ app.get('/tracks', function (req, res) {
 app.get('/setlist', function (req, res) {
 	console.log("I recieved a get request");
 
-	db1.setlist.find(function (err, docs) {
+	db.setlist.find(function (err, docs) {
 		console.log(docs);
 		res.json(docs);
 	});
@@ -36,14 +37,14 @@ app.post('/tracks', function(req, res) {
 
 app.post('/users', function(req, res) {
 	console.log(req.body);
-	db2.users.insert(req.body, function(err, doc) {
+	db.users.insert(req.body, function(err, doc) {
 		res.json(doc);
 	});
 });
 
 app.post('/setlist', function(req, res) {
 	console.log(req.body);
-	db1.setlist.insert(req.body, function(err, doc) {
+	db.setlist.insert(req.body, function(err, doc) {
 		res.json(doc);
 	});
 });
@@ -59,7 +60,7 @@ app.delete('/tracks/:id', function (req, res) {
 app.delete('/setlist/:id', function (req, res, err) {
 	var id = req.params.id;
 	console.log(id);
-	db1.setlist.remove({_id: mongojs.ObjectId(id)}, function(err, doc) {
+	db.setlist.remove({_id: mongojs.ObjectId(id)}, function(err, doc) {
 		res.json(doc);
 	});
 });
@@ -72,10 +73,18 @@ app.get('/tracks/:id', function(req, res) {
 	});
 });
 
+// app.get('/users/email/:email', function(req, res) {
+// 	var email = req.params.email;
+// 	console.log("Existing email validation: " + email);
+// 	db.users.findOne({email: email}, function(err, doc) {
+// 		res.json(doc);
+// 	});
+// });
+
 app.get('/users/email/:email', function(req, res) {
 	var email = req.params.email;
 	console.log("Existing email validation: " + email);
-	db2.users.findOne({email: email}, function(err, doc) {
+	db.users.findOne({email: email}, function(err, doc) {
 		res.json(doc);
 	});
 });
@@ -83,7 +92,7 @@ app.get('/users/email/:email', function(req, res) {
 app.get('/users/fname/:fname', function(req, res) {
 	var fname = req.params.fname;
 	console.log("Existing fname validation: " + fname);
-	db2.users.findOne({fname: fname}, function(err, doc) {
+	db.users.findOne({fname: fname}, function(err, doc) {
 		res.json(doc);
 	});
 });
@@ -91,8 +100,18 @@ app.get('/users/fname/:fname', function(req, res) {
 app.get('/users/username/:username', function(req, res) {
 	var username = req.params.username;
 	console.log("User: " + username);
-	db2.users.findOne({username: username}, function(err, doc) {
+	db.users.findOne({username: username}, function(err, doc) {
 		res.json(doc);
+	});
+});
+
+app.post('/newCollection', function(req, res) {
+	console.log("New collection body " + req);
+	db.createCollection("Cooley", function(err, collection){
+	   if (err) throw err;
+
+	   	console.log("Cooley" + " created");
+	 	console.log(collection);
 	});
 });
 

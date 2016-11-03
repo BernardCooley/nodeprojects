@@ -1,5 +1,5 @@
 <div class="container" ng-show="show">
-		<form name="registerForm" novalidate>
+		<form name="registerForm" novalidate ng-show="registerFormShow">
 
 			<h2>Registration</h2>
 			<span>All fields required</span>
@@ -51,4 +51,16 @@
 			<br>
 			<a href="#/signIn">Already registered?......<strong>Log In</strong></a>
 	</form>
+
+	<div class="container" ng-show="registerStatusShow">
+	<h2><span ng-Show="successShow">Registration successful</span></h2>
+	<h2><span ng-Show="failureShow">Registration unsuccessful. Please try again</span></h2>
+	<br>
+	<a href="#/signIn"><button class="btn btn-info" id="loginBtn" ng-click="" ng-show="loginBtn">Log In</button></a>
+
 </div>
+<br><br>
+
+
+</div>
+<br><br>

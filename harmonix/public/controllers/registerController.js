@@ -4,10 +4,10 @@ myApp.controller('RegisterController', ['$scope', '$http', '$location', function
 	$scope.addUser = function(user) {
 		console.log("Add user called");
 		$http.post('/users', {fname: user.fName, lname: user.lName, email: user.email, username: user.username, password: user.password}).success(function(response) {
-			console.log("Add user response username: " + response.username);
+			// console.log("Add user response username: " + response.username);
 		});
 
-		this.validateRegistration(user.email);
+		this.validateRegistration(user);
 	};
 
 	$scope.validateEmail = function(email) {
@@ -32,22 +32,24 @@ myApp.controller('RegisterController', ['$scope', '$http', '$location', function
 		});
 	};
 
-	$scope.validateRegistration = function(email) {
-		$http.get('/users/email/' + email).success(function(response) {
+	$scope.validateRegistration = function(user) {
+		$http.get('/users/email/' + user.email).success(function(response) {
 			if(response != null) {
-				console.log("Registration successful");
-				$scope.registrationMsg = "Congratulations " + email + ". Registration successful";
-				console.log($scope.registrationMsg);
-				$location.path("/registrationStatus");
-				// $showLoginBtn = true;
-				$rootScope.loginBtn = true;
+				console.log("Registration successful for: " + response.username);
+				$scope.registerFormShow = false;
+				$scope.registerStatusShow = true;
+				$scope.loginBtn = true;
+				$scope.successShow = true;
+				$scope.success = true;
 			} else {
 				console.log("Registration not successful: " + response);
-				$scope.registrationMsg = "Error with registration. Please try again or contact administrator.";
-				console.log($scope.registrationMsg);
-				$location.path("/registrationStatus");
+				$scope.failureShow = true;
 			}
 		});
+
+		this.createNewTracksCollection(user);
+
+		
 	};
 
 	$scope.duplicateEmail = function(email, registerForm) {
@@ -76,6 +78,16 @@ myApp.controller('RegisterController', ['$scope', '$http', '$location', function
 				}
 			});
 		}
+    };
+
+    $scope.createNewTracksCollection = function(user) {
+    	console.log("New tracks collection function called");
+    	
+    	$http.post('/newCollection', user.username).success(function(response) {
+			console.log(response);
+			// refreshSetlist();
+			// refreshTracks();
+		});
     };
 
 
