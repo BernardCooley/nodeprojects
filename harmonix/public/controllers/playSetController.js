@@ -41,4 +41,18 @@ myApp.controller('PlaySetController', ['$scope', '$http', function($scope, $http
 			refreshTracks();
 		});
 	};
+
+	$scope.saveNewSetlist = function() {
+		console.log("Save new set called");
+		
+	};
+
+
+
+
+
+
+
+
+
 }]);
