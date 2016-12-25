@@ -12,7 +12,6 @@ app.use(bodyParser.json());
 
 app.get('/tracks', function (req, res) {
 	console.log("I recieved a get request");
-
 	db.tracks.find(function (err, docs) {
 		console.log(docs);
 		res.json(docs);
@@ -21,7 +20,6 @@ app.get('/tracks', function (req, res) {
 
 app.get('/setlist', function (req, res) {
 	console.log("I recieved a get request");
-
 	db.setlist.find(function (err, docs) {
 		console.log(docs);
 		res.json(docs);
@@ -109,9 +107,19 @@ app.post('/newCollection', function(req, res) {
 	console.log("New collection body " + req);
 	db.createCollection("Cooley", function(err, collection){
 	   if (err) throw err;
-
 	   	console.log("Cooley" + " created");
 	 	console.log(collection);
+	});
+});
+
+app.put('/tracks/:id', function(req, res) {
+	var id = req.params.id;
+	var update = {Artist: req.body.Artist, Title: req.body.Title, Key: req.body.Key};
+	console.log(req.body);
+	db.tracks.findAndModify({query: {_id: mongojs.ObjectId(id)},
+		update: {$set: update},
+		new: true}, function(err, doc) {
+			res.json(doc);
 	});
 });
 
