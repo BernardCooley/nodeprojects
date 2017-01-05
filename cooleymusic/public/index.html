@@ -16,40 +16,40 @@
 </head>
 </head>
 <body>
-<div class="container">
-<br>
-<br>
-<br>
-	<table class="table">
-		<thead>
-		</thead>
-		<tbody>
-			<tr>
-				<td>
-					<a href="#/">Home</a>
-				</td>
-				<td>
-					<a href="#/about">About</a>
-				</td>
-				<td>
-					<a href="#/music">Music</a>
-				</td>
-				<td>
-					<a href="#/photos">Photos</a>
-				</td>
-				<td>
-					<a href="#/videos">Vidoes</a>
-				</td>
-				<td>
-					<a href="#/gigs">Gigs</a>
-				</td>
-				<td>
-					<a href="#/contact">Contact</a>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
+	<div class="container">
+		<br>
+		<br>
+		<br>
+		<table class="table">
+			<thead>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<a href="#/">Home</a>
+					</td>
+					<td>
+						<a href="#/about">About</a>
+					</td>
+					<td>
+						<a href="#/music">Music</a>
+					</td>
+					<td>
+						<a href="#/photos">Photos</a>
+					</td>
+					<td>
+						<a href="#/videos">Vidoes</a>
+					</td>
+					<td>
+						<a href="#/gigs">Gigs</a>
+					</td>
+					<td>
+						<a href="#/contact">Contact</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
 	<div id="body" class="container">
 		<ng-view></ng-view>
@@ -59,37 +59,42 @@
 	<div id="footer" class="container">
 
 		<table class="table">
-		<thead>
-		</thead>
-		<tbody>
+			<thead>
+			</thead>
+			<tbody>
 			<tr>
-				<span>Sign up to mailing list for updates</span>
-			</tr>
-			<tr>
-				<input type="email" name="emailAddress">
-			</tr>
-			<tr>
-				<button>Submit</button>
-			</tr>
-		</tbody>
-	</table>
+				<td>
+					<span>Sign up to mailing list for updates</span>
+					<br>
+				</td>
+				<td>
+					<input type="email" name="emailAddress">
+					<br>
+				</td>
+				</tr>
+				<td>
+					<button>Submit</button>
+					<br>
+				</td>
+			</tbody>
+		</table>
 	</div>
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-<script src="controllers/mainController.js"></script>
-<script src="controllers/homeController.js"></script>
-<script src="controllers/aboutController.js"></script>
-<script src="controllers/musicController.js"></script>
-<script src="controllers/photosController.js"></script>
-<script src="controllers/videosController.js"></script>
-<script src="controllers/gigsController.js"></script>
-<script src="controllers/contactController.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-<script src="js/config.js"></script>
-<script src="js/app.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.8/angular-messages.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+	<script src="controllers/mainController.js"></script>
+	<script src="controllers/homeController.js"></script>
+	<script src="controllers/aboutController.js"></script>
+	<script src="controllers/musicController.js"></script>
+	<script src="controllers/photosController.js"></script>
+	<script src="controllers/videosController.js"></script>
+	<script src="controllers/gigsController.js"></script>
+	<script src="controllers/contactController.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/app.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.8/angular-messages.js"></script>
 </body>
 </html>
