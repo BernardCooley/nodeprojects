@@ -1,3 +1,3 @@
-myApp.controller('HomeController', function($scope, $http) {
+myApp.controller('HomeController', function($scope, $http, $location) {
 	console.log("Home controller");
 });
