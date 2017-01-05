@@ -1,0 +1,38 @@
+.centred{
+	margin: auto;
+    width: 70%;
+    padding: 10px;
+}
+
+.rightAligned {
+	align-items: right;
+}
+
+body {
+    background-color: #2e3642;
+    color: #1e4f9e;
+}
+
+.linkText {
+	font-size: 30px;
+}
+
+.searchBox {
+	margin: auto;
+	width: 40%;
+}
+
+.errorMsg {
+	color: red;
+}
+
+.container {
+  transition: all linear 0.0s;
+  color: #1e4f9e;
+}
+
+#footer {
+	position:fixed;
+	bottom:10px;
+	width:100%;
+}
