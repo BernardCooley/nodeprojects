@@ -11,4 +11,13 @@ myApp.controller('MainController', function ($scope, $http){
 	$scope.successShow = false;
 	$scope.failureShow = false;
 	$scope.navShow = true;
+
+	$scope.addEmailAddress = function() {
+		console.log("add email address");
+		var email = $scope.user;
+		console.log(email);
+		$http.post('/cooleyMusic', email).success(function(response) {
+				console.log(response);
+			});
+	};
 });

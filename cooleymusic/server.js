@@ -4,11 +4,22 @@ var mongojs = require('mongojs');
 // var db = mongojs('tracks', ['tracks']);
 // var db = mongojs('setlist', ['setlist']);
 // var db = mongojs('users', ['users']);
-var db = mongojs('harmonixDB', ['harmonixDB']);
+var db = mongojs('cooleyMusic', ['cooleyMusic']);
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname = '\public'));
 app.use(bodyParser.json());
+
+app.post('/cooleyMusic', function(req, res) {
+	console.log(req.body);
+	db.emailAddresses.insert(req.body, function(err, doc) {
+		res.json(doc);
+	});
+});
+
+
+
+
 
 app.get('/tracks', function (req, res) {
 	console.log("I recieved a get request");

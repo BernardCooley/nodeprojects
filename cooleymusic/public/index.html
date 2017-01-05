@@ -54,29 +54,26 @@
 		<ng-view></ng-view>
 	</div>
 
-
 	<div id="footer" class="container">
-
-		<table class="table">
-			<thead>
-			</thead>
-			<tbody>
-				<tr>
-					<td align="center">
-						<span>Sign up to mailing list for updates</span>
-						<br>
-					</td>
-					<td align="center">
-						<input type="email" name="emailAddress">
-						<br>
-					</td>
-					<td align="center">
-						<button>Submit</button>
-						<br>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+		<form name="form">
+			<table class="table">
+				<thead>
+				</thead>
+				<tbody>
+					<tr>
+						<td align="center">
+							<span>Sign up to mailing list for updates</span>
+						</td>
+						<td align="center">
+							<input type="text" name="emailAddress" ng-model="user.email" placeholder="Enter Email Address">
+						</td>
+						<td align="center">
+							<button ng-click="addEmailAddress()">Submit</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
 	</div>
 
 
