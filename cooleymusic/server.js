@@ -4,7 +4,7 @@ var mongojs = require('mongojs');
 // var db = mongojs('tracks', ['tracks']);
 // var db = mongojs('setlist', ['setlist']);
 // var db = mongojs('users', ['users']);
-var db = mongojs('cooleyMusicaa', ['cooleyMusicaa']);
+var db = mongojs('cooleyMusic', ['mailing_list']);
 var bodyParser = require('body-parser');
 
 app.use(express.static(__dirname = '\public'));

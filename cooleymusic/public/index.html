@@ -55,21 +55,15 @@
 	</div>
 
 	<div id="footer" class="container">
-		<form name="form">
+		<form id="mailingListForm" name="form">
 			<table class="table">
 				<thead>
 				</thead>
 				<tbody>
 					<tr>
-						<td align="center">
-							<span>Sign up to mailing list for updates</span>
-						</td>
-						<td align="center">
-							<input type="text" name="emailAddress" ng-model="user.email" placeholder="Enter Email Address">
-						</td>
-						<td align="center">
-							<button ng-click="addEmailAddress()">Submit</button>
-						</td>
+						<span>Sign up to mailing list for updates</span>
+						<input type="email" name="emailAddress" ng-model="user.email" placeholder="Enter Email Address">
+						<button ng-click="addEmailAddress()">Submit</button>
 					</tr>
 				</tbody>
 			</table>
