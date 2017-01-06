@@ -25,25 +25,25 @@
 			<tbody>
 				<tr>
 					<td align="center">
-						<button class="navButton"><a href="#/">Home</a></button>
+						<button class="navButton" ng-click="changePage('home')">Home</button>
 					</td>
 					<td align="center">
-						<button class="navButton"><a href="#/about">About</a></button>
+						<button class="navButton" ng-click="changePage('about')">About</button>
 					</td>
 					<td align="center">
-						<button class="navButton"><a href="#/music">Music</a></button>
+						<button class="navButton" ng-click="changePage('music')">Music</button>
 					</td>
 					<td align="center">
-						<button class="navButton"><a href="#/photos">Photos</a></button>
+						<button class="navButton" ng-click="changePage('photos')">Photos</button>
 					</td>
 					<td align="center">
-						<button class="navButton"><a href="#/videos">Vidoes</a></button>
+						<button class="navButton" ng-click="changePage('videos')">Vidoes</button>
 					</td>
 					<td align="center">
-						<button class="navButton"><a href="#/gigs">Gigs</a></button>
+						<button class="navButton" ng-click="changePage('gigs')">Gigs</button>
 					</td>
 					<td align="center">
-						<button class="navButton"><a href="#/contact">Contact</a></button>
+						<button class="navButton" ng-click="changePage('contacts')">Contact</button>
 					</td>
 				</tr>
 			</tbody>
@@ -55,89 +55,92 @@
 	</div>
 
 	<div id="footer" class="container">
-	<div id="mailingList">
-		<form id="mailingListForm" name="form">
+
+
+		<div id="social">
 			<table class="table">
 				<thead>
 				</thead>
 				<tbody>
 					<tr>
-						<span>Sign up to mailing list for updates</span>
-						<input type="email" name="emailAddress" ng-model="user.email" placeholder="Enter Email Address">
-						<button ng-click="addEmailAddress()">Submit</button>
-					</tr>
-				</tbody>
-			</table>
-		</form>
+					<td>
+						<div id="mailingList">
+			<form id="mailingListForm" name="form">
+				<table class="table">
+					<thead>
+					</thead>
+					<tbody>
+						<tr>
+							<span>Sign up to mailing list for updates</span>
+							<input id="emailTextBox" type="email" name="emailAddress" ng-model="user.email" placeholder="Enter Email Address">
+							<button id="submitBtn" ng-click="addEmailAddress()">Submit</button>
+						</tr>
+					</tbody>
+				</table>
+			</form>
 		</div>
-
-		<div id="social">
-		<table class="table">
-		<thead>
-		</thead>
-		<tbody>
-			<tr>
-			<td>
-				<div class="col-xs-3">
-                <div fb-like></div>
+					</td>
+						<td>
+							<div class="col-xs-3">
+								<div fb-like></div>
                 <!--
                     Use this format for a custom URL
                     <div fb-like="myModel.Url"></div>
                 -->
-                </td>
-                <td>
+            </td>
+            <td>
             </div>
             <div class="col-xs-3">
-                <div tweet="myModel.Name"></div>
+            	<div tweet="myModel.Name"></div>
                 <!--
                     Use this format for a custom URL
                     <div tweet="myModel.Name" tweet-url="myModel.Url"></div>
                 -->
-                </td>
-                <td>
+            </td>
+            <td>
             </div>
             <div class="col-xs-3">
-                <div google-plus></div>
+            	<div google-plus></div>
                 <!--
                     Use this format for a custom URL
                     <div google-plus="myModel.Url"></div>
                 -->
-                </td>
-                <td>
+            </td>
+            <td>
             </div>
             <div class="col-xs-3">
-                <div pin-it="myModel.Name" pin-it-image="myModel.ImageUrl"></div>
+            	<div pin-it="myModel.Name" pin-it-image="myModel.ImageUrl"></div>
                 <!--
                     Use this format for a custom URL
                     <div pin-it="myModel.Name" pin-it-image="myModel.ImageUrl" pin-it-url="myModel.Url"></div>
                 -->
-                </td>
-            </div>
-			</tr>
-			</tbody>
-		</table>
-
-
-			
-		</div>
-	</div>
+            </td>
+        </div>
+    </tr>
+</tbody>
+</table>
 
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-	<script src="controllers/mainController.js"></script>
-	<script src="controllers/homeController.js"></script>
-	<script src="controllers/aboutController.js"></script>
-	<script src="controllers/musicController.js"></script>
-	<script src="controllers/photosController.js"></script>
-	<script src="controllers/videosController.js"></script>
-	<script src="controllers/gigsController.js"></script>
-	<script src="controllers/contactController.js"></script>
-	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-	<script src="js/config.js"></script>
-	<script src="js/app.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.8/angular-messages.js"></script>
-	<script src="directives/angulike.js"></script>
+</div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+<script src="controllers/mainController.js"></script>
+<script src="controllers/homeController.js"></script>
+<script src="controllers/aboutController.js"></script>
+<script src="controllers/musicController.js"></script>
+<script src="controllers/photosController.js"></script>
+<script src="controllers/videosController.js"></script>
+<script src="controllers/gigsController.js"></script>
+<script src="controllers/contactController.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.8/angular-messages.js"></script>
+<script src="directives/angulike.js"></script>
 </body>
 </html>

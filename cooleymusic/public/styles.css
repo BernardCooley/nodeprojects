@@ -11,13 +11,19 @@
 body {
     /*background-color: #2e3642;*/
     background-image: url("images/background.jpg");
-    /*color: #1e4f9e;*/
+    background-size:cover;
+    font-family: Geneva, Tahoma, Verdana, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 300;
+    line-height: 26.4px;
+    color: #1e4f9e;
 }
 
-.container {
+/*.container {
   transition: all linear 0.0s;
   color: #FFFFFF;
-}
+}*/
 
 #footer {
 	position:fixed;
@@ -30,14 +36,24 @@ body {
 	height: 100px;
     width: 100px;
     border-radius: 100px;
-    border: 2px solid #000;
+    border: 1px solid rgba(0, 0, 0, 0.5);
     background-color:rgba(0, 0, 0, 0.5);
     color: #FFFFFF;
+    outline: none;
 }
 
 #mailingListForm {
-	height: 55px;
-	width: 250px;
-	margin: 0 auto;
+	height: 75px;
+	width: 255px;
+	margin: 1 auto;
 	background-color:rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+#submitBtn {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#emailTextBox {
+    background-color: rgba(0, 0, 0, 0.5);
 }

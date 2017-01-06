@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', ['ngRoute', 'ngMessages', 'angulike'])
 
-myApp.controller('MainController', function ($scope, $http){
+myApp.controller('MainController', ['$scope', '$http', '$location', function ($scope, $http, $location){
 	console.log("Main controller");
 	$scope.isDisabled = true;
 	$scope.show = true;
@@ -20,4 +20,15 @@ myApp.controller('MainController', function ($scope, $http){
 				console.log(response);
 			});
 	};
-});
+
+	$scope.changePage = function(page) {
+		console.log(page);
+		if(page == 'home') {
+			$location.path('/');
+		} else {
+			$location.path('/' + page);
+		}
+		
+	};
+
+}]);
