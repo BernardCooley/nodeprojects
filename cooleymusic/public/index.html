@@ -10,16 +10,16 @@
 
 	<base href="/">
 
-	<title>Harmonix - Home</title>
+	<title>CooleyMusic - Home</title>
 	
 
 </head>
-<body>
+<body background="images/background.jpg">
 	<div class="container table-responsive">
 		<br>
 		<br>
 		<br>
-		<table class="table">
+		<table class="table navIcons">
 			<thead>
 			</thead>
 			<tbody>
@@ -55,6 +55,7 @@
 	</div>
 
 	<div id="footer" class="container">
+	<div id="mailingList">
 		<form id="mailingListForm" name="form">
 			<table class="table">
 				<thead>
@@ -68,6 +69,57 @@
 				</tbody>
 			</table>
 		</form>
+		</div>
+
+		<div id="social">
+		<table class="table">
+		<thead>
+		</thead>
+		<tbody>
+			<tr>
+			<td>
+				<div class="col-xs-3">
+                <div fb-like></div>
+                <!--
+                    Use this format for a custom URL
+                    <div fb-like="myModel.Url"></div>
+                -->
+                </td>
+                <td>
+            </div>
+            <div class="col-xs-3">
+                <div tweet="myModel.Name"></div>
+                <!--
+                    Use this format for a custom URL
+                    <div tweet="myModel.Name" tweet-url="myModel.Url"></div>
+                -->
+                </td>
+                <td>
+            </div>
+            <div class="col-xs-3">
+                <div google-plus></div>
+                <!--
+                    Use this format for a custom URL
+                    <div google-plus="myModel.Url"></div>
+                -->
+                </td>
+                <td>
+            </div>
+            <div class="col-xs-3">
+                <div pin-it="myModel.Name" pin-it-image="myModel.ImageUrl"></div>
+                <!--
+                    Use this format for a custom URL
+                    <div pin-it="myModel.Name" pin-it-image="myModel.ImageUrl" pin-it-url="myModel.Url"></div>
+                -->
+                </td>
+            </div>
+			</tr>
+			</tbody>
+		</table>
+
+
+			
+		</div>
 	</div>
 
 
@@ -86,5 +138,6 @@
 	<script src="js/app.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.8/angular-messages.js"></script>
+	<script src="directives/angulike.js"></script>
 </body>
 </html>

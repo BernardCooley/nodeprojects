@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngMessages'])
+var myApp = angular.module('myApp', ['ngRoute', 'ngMessages', 'angulike'])
 
 myApp.controller('MainController', function ($scope, $http){
 	console.log("Main controller");
