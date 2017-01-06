@@ -16,7 +16,7 @@ myApp.controller('MainController', function ($scope, $http){
 		console.log("add email address");
 		var email = $scope.user;
 		console.log(email);
-		$http.post('/cooleyMusic', email).success(function(response) {
+		$http.post('/mailing_list', email).success(function(response) {
 				console.log(response);
 			});
 	};
