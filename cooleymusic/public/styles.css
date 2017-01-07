@@ -17,7 +17,7 @@ body {
     font-variant: normal;
     font-weight: 300;
     line-height: 26.4px;
-    color: #1e4f9e;
+    color: #FFFFFF;
 }
 
 /*.container {
@@ -26,7 +26,7 @@ body {
 }*/
 
 #footer {
-	position:fixed;
+	/*position:fixed;*/
 	bottom:10px;
 	width:100%;
 	margin: 0 auto;
@@ -43,7 +43,7 @@ body {
 }
 
 #mailingListForm {
-	height: 75px;
+	height: 80%;
 	width: 255px;
 	margin: 1 auto;
 	background-color:rgba(0, 0, 0, 0.5);
@@ -56,4 +56,21 @@ body {
 
 #emailTextBox {
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.active {
+    background-color: rgba(60, 109, 105, 0.5);
+}
+
+.errorMsg {
+    color: #870101;
+}
+
+.successMsg {
+    color: #018727;
+}
+
+#social {
+    position: absolute;
+    right: 0;
 }

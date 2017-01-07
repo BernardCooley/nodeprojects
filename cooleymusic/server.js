@@ -25,7 +25,13 @@ app.get('/mailing_list', function (req, res) {
 	});
 });
 
-
+app.get('/mailing_list/:email', function(req, res) {
+	var email = req.params.email;
+	console.log("Existing email validation: " + email);
+	db.mailing_list.findOne({email: email}, function(err, doc) {
+		res.json(doc);
+	});
+});
 
 
 

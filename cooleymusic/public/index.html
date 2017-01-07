@@ -10,7 +10,7 @@
 
 	<base href="/">
 
-	<title>CooleyMusic - Home</title>
+	<title>CooleyMusic</title>
 	
 
 </head>
@@ -25,104 +25,94 @@
 			<tbody>
 				<tr>
 					<td align="center">
-						<button class="navButton" ng-click="changePage('home')">Home</button>
+						<button class="navButton" ng-class="{active: isActive('/')}" ng-click="changeView('home')">Home</button>
 					</td>
 					<td align="center">
-						<button class="navButton" ng-click="changePage('about')">About</button>
+						<button class="navButton" ng-class="{active: isActive('/about')}" ng-click="changeView('about')">About</button>
 					</td>
 					<td align="center">
-						<button class="navButton" ng-click="changePage('music')">Music</button>
+						<button class="navButton" ng-class="{active: isActive('/music')}" ng-click="changeView('music')">Music</button>
 					</td>
 					<td align="center">
-						<button class="navButton" ng-click="changePage('photos')">Photos</button>
+						<button class="navButton" ng-class="{active: isActive('/photos')}" ng-click="changeView('photos')">Photos</button>
 					</td>
 					<td align="center">
-						<button class="navButton" ng-click="changePage('videos')">Vidoes</button>
+						<button class="navButton" ng-class="{active: isActive('/videos')}" ng-click="changeView('videos')">Vidoes</button>
 					</td>
 					<td align="center">
-						<button class="navButton" ng-click="changePage('gigs')">Gigs</button>
+						<button class="navButton" ng-class="{active: isActive('/gigs')}" ng-click="changeView('gigs')">Gigs</button>
 					</td>
 					<td align="center">
-						<button class="navButton" ng-click="changePage('contacts')">Contact</button>
+						<button class="navButton" ng-class="{active: isActive('/contact')}" ng-click="changeView('contact')">Contact</button>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-
 	<div id="body" class="container">
 		<ng-view></ng-view>
 	</div>
-
 	<div id="footer" class="container">
-
-
-		<div id="social">
-			<table class="table">
-				<thead>
-				</thead>
-				<tbody>
-					<tr>
+		<table class="table">
+			<thead>
+			</thead>
+			<tbody>
+				<tr>
 					<td>
 						<div id="mailingList">
-			<form id="mailingListForm" name="form">
-				<table class="table">
-					<thead>
-					</thead>
-					<tbody>
-						<tr>
-							<span>Sign up to mailing list for updates</span>
-							<input id="emailTextBox" type="email" name="emailAddress" ng-model="user.email" placeholder="Enter Email Address">
-							<button id="submitBtn" ng-click="addEmailAddress()">Submit</button>
-						</tr>
-					</tbody>
-				</table>
-			</form>
-		</div>
+							<form id="mailingListForm" novalidate name="newsletterForm">
+								<table class="table">
+									<thead>
+									</thead>
+									<tbody>
+										<tr>
+											<span>{{validationMsg}}</span>
+											<input class="form-control" id="emailTextBox" required ng-messages="newsletterForm.email.$error" type="email" name="emailAddress" ng-model="userEmail" placeholder="Enter Email Address" ng-change="validateEmail(userEmail, newsletterForm)">
+											<button class="form-control" id="submitBtn" ng-disabled="newsletterForm.$invalid" ng-click="addEmailAddress(userEmail); userEmail = null; successMessage()">Submit</button>
+											</div>
+										</tr>
+									</tbody>
+								</table>
+							</form>
+						</div>
 					</td>
-						<td>
-							<div class="col-xs-3">
-								<div fb-like></div>
-                <!--
-                    Use this format for a custom URL
-                    <div fb-like="myModel.Url"></div>
-                -->
-            </td>
-            <td>
-            </div>
-            <div class="col-xs-3">
-            	<div tweet="myModel.Name"></div>
-                <!--
-                    Use this format for a custom URL
-                    <div tweet="myModel.Name" tweet-url="myModel.Url"></div>
-                -->
-            </td>
-            <td>
-            </div>
-            <div class="col-xs-3">
-            	<div google-plus></div>
-                <!--
-                    Use this format for a custom URL
-                    <div google-plus="myModel.Url"></div>
-                -->
-            </td>
-            <td>
-            </div>
-            <div class="col-xs-3">
-            	<div pin-it="myModel.Name" pin-it-image="myModel.ImageUrl"></div>
-                <!--
-                    Use this format for a custom URL
-                    <div pin-it="myModel.Name" pin-it-image="myModel.ImageUrl" pin-it-url="myModel.Url"></div>
-                -->
-            </td>
-        </div>
-    </tr>
-</tbody>
-</table>
-
-
-
-</div>
+					<td>
+						<div id="social">
+							<table class="table">
+								<thead>
+								</thead>
+								<tbody>
+									<tr>
+										<div class="col-xs-3">
+											<div fb-like></div>
+								                <!--
+								                    Use this format for a custom URL
+								                    <div fb-like="myModel.Url"></div>
+								                -->
+			            				</div>
+			            				<div class="col-xs-3">
+			            					<div tweet="myModel.Name"></div>
+								                <!--
+								                    Use this format for a custom URL
+								                    <div tweet="myModel.Name" tweet-url="myModel.Url"></div>
+								                -->
+				            			</div>
+				            			<div class="col-xs-3">
+							            	<div google-plus></div>
+							                <!--
+							                    Use this format for a custom URL
+							                    <div google-plus="myModel.Url"></div>
+							                -->
+				            			</div>
+				            		</tr>
+				    			</tbody>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
 
 
