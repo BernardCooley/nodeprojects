@@ -15,101 +15,15 @@
 
 </head>
 <body background="images/background.jpg">
-	<div class="container table-responsive">
-		<br>
-		<br>
-		<br>
-		<table class="table navIcons">
-			<thead>
-			</thead>
-			<tbody>
-				<tr>
-					<td align="center">
-						<button class="navButton" ng-class="{active: isActive('/')}" ng-click="changeView('home')">Home</button>
-					</td>
-					<td align="center">
-						<button class="navButton" ng-class="{active: isActive('/about')}" ng-click="changeView('about')">About</button>
-					</td>
-					<td align="center">
-						<button class="navButton" ng-class="{active: isActive('/music')}" ng-click="changeView('music')">Music</button>
-					</td>
-					<td align="center">
-						<button class="navButton" ng-class="{active: isActive('/photos')}" ng-click="changeView('photos')">Photos</button>
-					</td>
-					<td align="center">
-						<button class="navButton" ng-class="{active: isActive('/videos')}" ng-click="changeView('videos')">Vidoes</button>
-					</td>
-					<td align="center">
-						<button class="navButton" ng-class="{active: isActive('/gigs')}" ng-click="changeView('gigs')">Gigs</button>
-					</td>
-					<td align="center">
-						<button class="navButton" ng-class="{active: isActive('/contact')}" ng-click="changeView('contact')">Contact</button>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<div id="body" class="container">
-		<ng-view></ng-view>
-	</div>
-	<div id="footer" class="container">
-		<table class="table">
-			<thead>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<div id="mailingList">
-							<form id="mailingListForm" novalidate name="newsletterForm">
-								<table class="table">
-									<thead>
-									</thead>
-									<tbody>
-										<tr>
-											<span>{{validationMsg}}</span>
-											<input class="form-control" id="emailTextBox" required ng-messages="newsletterForm.email.$error" type="email" name="emailAddress" ng-model="userEmail" placeholder="Enter Email Address" ng-change="validateEmail(userEmail, newsletterForm)">
-											<button class="form-control" id="submitBtn" ng-disabled="newsletterForm.$invalid" ng-click="addEmailAddress(userEmail); userEmail = null; successMessage()">Submit</button>
-										</div>
-									</tr>
-								</tbody>
-							</table>
-						</form>
-					</div>
-				</td>
-				<td>
-					<div id="social">
-						<table class="table1">
-							<thead>
-							</thead>
-							<tbody>
-								<tr>
-										<a href="https://www.facebook.com/BCooleyMusic/" target="_blank"><img class="socialIcon navButton" src="images/social/face book.png"></a>&nbsp;&nbsp;
-										<a href="https://twitter.com/CooleyLeSprock" target="_blank"><img class="socialIcon navButton" src="images/social/twitter.png"></a>&nbsp;&nbsp;
-										<a href="https://soundcloud.com/bernard-cooley" target="_blank"><img class="socialIcon navButton" src="images/social/sound cloud.png"></a>&nbsp;&nbsp;
-										<a href="https://www.youtube.com/user/SPROCKET23" target="_blank"><img class="socialIcon navButton" src="images/social/youtube.png"></a>
-									<br>
-									<br>
-									<td>
-										<div class="col-xs-3">
-											<div fb-like="myModel.Url">
-											</div>
-										</div>
-										</td>
-										<td>
-										<div class="col-xs-3">
-											<div tweet="myModel.Name">
-											</div>
-										</div>
-										</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+
+<div ng-include="'views/navigation.html'"></div>
+
+<div id="body" class="container">
+	<ng-view></ng-view>
 </div>
+
+<div ng-include="'views/footer.html'"></div>
+	
 </div>
 
 

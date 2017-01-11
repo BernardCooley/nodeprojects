@@ -1,0 +1,57 @@
+<div id="footer" class="container">
+	<table class="table">
+		<thead>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<div id="mailingList">
+						<form id="mailingListForm" novalidate name="newsletterForm">
+							<table class="table">
+								<thead>
+								</thead>
+								<tbody>
+									<tr>
+										<span>{{validationMsg}}</span>
+										<input class="form-control" id="emailTextBox" required ng-messages="newsletterForm.email.$error" type="email" name="emailAddress" ng-model="userEmail" placeholder="Enter Email Address" ng-change="validateEmail(userEmail, newsletterForm)">
+										<button class="form-control" id="submitBtn" ng-disabled="newsletterForm.$invalid" ng-click="addEmailAddress(userEmail); userEmail = null; successMessage()">Submit</button>
+									</tr>
+								</tbody>
+							</table>
+						</form>
+					</div>
+				</td>
+				<td>
+					<div id="social">
+						<table class="table1">
+							<thead>
+							</thead>
+							<tbody>
+								<tr>
+									<a href="https://www.facebook.com/BCooleyMusic/" target="_blank"><img class="socialIcon navButton" src="images/social/face book.png"></a>&nbsp;&nbsp;
+									<a href="https://twitter.com/CooleyLeSprock" target="_blank"><img class="socialIcon navButton" src="images/social/twitter.png"></a>&nbsp;&nbsp;
+									<a href="https://soundcloud.com/bernard-cooley" target="_blank"><img class="socialIcon navButton" src="images/social/sound cloud.png"></a>&nbsp;&nbsp;
+									<a href="https://www.youtube.com/user/SPROCKET23" target="_blank"><img class="socialIcon navButton" src="images/social/youtube.png"></a>
+									<br>
+									<br>
+									<td>
+										<div class="col-xs-3">
+											<div fb-like="myModel.Url">
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="col-xs-3">
+											<div tweet="myModel.Name">
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
