@@ -4,13 +4,11 @@
     padding: 10px;
 }
 
-.rightAligned {
-	align-items: right;
-}
-
 body {
     /*background-color: #2e3642;*/
-    background-image: url("images/background.jpg");
+    /*background-image: url("images/background.jpg");*/
+    /*background-image: url("images/gradient-747800_1280.png");*/
+    background-image: url("images/concentration-gradient-3408.jpg");
     background-size:cover;
     font-family: Geneva, Tahoma, Verdana, sans-serif;
     font-style: normal;
@@ -83,4 +81,11 @@ body {
 	height: 60px;
 	width: 80px;
 	padding: 10px;
+}
+
+.bodyContainer {
+    height: 1000px;
+    /*background-color: red;*/
+    width: 90%;
+    overflow-y: scroll;
 }
