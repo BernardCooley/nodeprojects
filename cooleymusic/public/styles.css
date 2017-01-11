@@ -4,11 +4,15 @@
     padding: 10px;
 }
 
+head {
+    background-image: url("images/cooley-banner.jpg");
+}
+
 body {
     /*background-color: #2e3642;*/
-    /*background-image: url("images/background.jpg");*/
+    background-image: url("images/background.jpg");
     /*background-image: url("images/gradient-747800_1280.png");*/
-    background-image: url("images/concentration-gradient-3408.jpg");
+    /*background-image: url("images/abstract-blue-background-technology-20522495.jpg");*/
     background-size:cover;
     font-family: Geneva, Tahoma, Verdana, sans-serif;
     font-style: normal;
@@ -28,6 +32,7 @@ body {
 	bottom:10px;
 	width:100%;
 	margin: 0 auto;
+    background-color:rgba(0, 0, 0, 0.5);
 }
 
 .navButton {
@@ -44,7 +49,7 @@ body {
 	height: 80%;
 	width: 255px;
 	margin: 1 auto;
-	background-color:rgba(0, 0, 0, 0.5);
+	/*background-color:rgba(0, 0, 0, 0.5);*/
     padding: 10px;
 }
 
@@ -57,7 +62,7 @@ body {
 }
 
 .active {
-    background-color: rgba(60, 109, 105, 0.5);
+    background-color: rgba(195, 194, 196, 0.5);
 }
 
 .errorMsg {
@@ -86,6 +91,17 @@ body {
 .bodyContainer {
     height: 1000px;
     /*background-color: red;*/
-    width: 90%;
-    overflow-y: scroll;
+    width: 100%;
+    /*overflow-y: scroll;*/
+}
+
+.scrollableContainer {
+    /*height: 1000px;*/
+    /*overflow-y: scroll;*/
+    /*background-color:rgba(0, 0, 0, 0.5);*/
+    /*width: 50%;*/
+}
+
+#videoCarousel {
+    height: 520px;
 }
