@@ -74,3 +74,13 @@ body {
     position: absolute;
     right: 0;
 }
+
+.socialActions {
+	background-color:rgba(0, 0, 0, 0.5);
+}
+
+.socialIcon {
+	height: 60px;
+	width: 80px;
+	padding: 10px;
+}

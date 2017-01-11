@@ -53,6 +53,12 @@ myApp.controller('MainController', ['$scope', '$http', '$location', function ($s
 	$scope.isActive = function (viewLocation) {
      var active = (viewLocation === $location.path());
      return active;
-};
+	};
+
+	$scope.myModel = {
+              Url: 'https://www.facebook.com/BCooleyMusic/',
+              Name: "Cooley's new artist website.",
+              ImageUrl: 'http://www.jasonwatmore.com/pics/jason.jpg'
+          };
 
 }]);
