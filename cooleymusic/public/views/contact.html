@@ -1,3 +1,43 @@
-<div class="container" ng-show="show">
-	CONTACT
+<div id="" class="container">
+	<form class="form" name="contactForm" novalidate>
+
+		<h3>Contact</h3>
+		<table class="table">
+			<thead>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<span>Name</span>
+						<input class="form-control contactForm" required id="nameTextBox" type="text" name="name" placeholder="Name">
+
+						<span>Email</span>
+						<input class="form-control contactForm" required id="emailTextBox" type="email" name="email" placeholder="Email address">
+
+						<span>Message</span>
+						<textarea class="form-control contactForm" required id="messageTextArea" name="message" placeholder="Message">
+						</textarea>
+
+						<br>
+						<button class="form-control contactForm" id="submitBtn" ng-disabled="contactForm.$invalid">Send</button>
+					</td>
+					<td>
+						<h3>Booking</h3>
+
+						<span>Mob: 6754738478568</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<br>
+		<br>
+
+
+
+
+	</form>
+
+
+
 </div>

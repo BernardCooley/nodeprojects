@@ -10,7 +10,8 @@ head {
 
 body {
     /*background-color: #2e3642;*/
-    background-image: url("images/background.jpg");
+    /*background-image: url("images/background.jpg");*/
+    background-image: url("images/concentration-gradient-3408.jpg");
     /*background-image: url("images/gradient-747800_1280.png");*/
     /*background-image: url("images/abstract-blue-background-technology-20522495.jpg");*/
     background-size:cover;
@@ -36,16 +37,16 @@ body {
 }
 
 .navButton {
-	height: 100px;
-    width: 100px;
-    border-radius: 100px;
+	height: 80px;
+    width: 80px;
+    border-radius: 80px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     background-color:rgba(0, 0, 0, 0.5);
     color: #FFFFFF;
     outline: none;
 }
 
-#mailingListForm {
+#form {
 	height: 80%;
 	width: 255px;
 	margin: 1 auto;
@@ -53,11 +54,18 @@ body {
     padding: 10px;
 }
 
+.form {
+    height: 80%;
+    width: 100%;
+    margin: 1 auto;
+    padding: 10px;
+}
+
 #submitBtn {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-#emailTextBox {
+#textBox {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -104,4 +112,9 @@ body {
 
 #videoCarousel {
     height: 520px;
+}
+
+.contactForm {
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
