@@ -16,10 +16,11 @@
 						<input class="form-control transparent contactForm" id="to" required type="email" name="email" placeholder="Email address" ng-model="contact.email">
 
 						<span>Message</span>
-						<input class="form-control transparent contactForm" id="text" required name="message" placeholder="Message" ng-model="contact.message">
+						<textarea class="form-control transparent contactForm" id="text" required name="message" placeholder="Message" ng-model="contact.message">
+						</textarea>
 
 						<br>
-						<button class="form-control contactForm" id="send_email" ng-disabled="contactForm.$invalid" ng-click="sendMessage(contact)">Send</button>
+						<button class="form-control contactForm" id="submitBtn" ng-disabled="contactForm.$invalid" ng-click="sendMessage(contact)">Send</button>
 						<span id="message"></span>
 					</form>
 				</td>
@@ -31,26 +32,6 @@
 			</tr>
 		</tbody>
 	</table>
-
-	<div id="container">
-		<div></div>
-		Node.JS Email application
-		<div>
-			<h1>Mailer In Node.JS</h1>
-			<input id="emailTextBox" type="text" placeholder="Enter E-mail ID where you want to send" />
-			<textarea id="messageTextArea" cols="40" rows="5" placeholder="Write what you want to send"></textarea>
-			<button id="send_email">Send Email</button>
-			<span id="message"></span>
-		</div>
-
 		<br>
 		<br>
-
-
-
-
-
-
-
-
 	</div>

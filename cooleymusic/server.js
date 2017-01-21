@@ -42,21 +42,27 @@ app.get('/mailing_list/:email', function(req, res) {
 });
 
 app.get('/send', function(req, res) {
-	var mailOptions = {
-		to : req.query.to,
-		text : req.query.text
-	};
-	console.log(mailOptions);
-	smtpTransport.sendMail(mailOptions, function(error, response){
-		if(error){
-			console.log(error);
-			res.end("error");
-		}else{
-			console.log("Message sent: " + response.message);
-			res.end("sent");
-		}
-	});
+	var email = req.body.to;
+	console.log("*****************************" + email);
+	// var mailOptions = {to : req.query.to, text : req.query.text};
+	// console.log(mailOptions);
+	// smtpTransport.sendMail(mailOptions, function(error, response){
+	// 	if(error){
+	// 		console.log(error);
+	// 		res.end("error");
+	// 	}else{
+	// 		console.log("Message sent: " + response.message);
+	// 		res.end("sent");
+	// 	}
+	// });
 });
+
+// app.post('/setlist', function(req, res) {
+// 	console.log(req.body);
+// 	db.setlist.insert(req.body, function(err, doc) {
+// 		res.json(doc);
+// 	});
+// });
 
 
 
