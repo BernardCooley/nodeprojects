@@ -32,7 +32,7 @@ body {
 }*/
 
 #footer {
-	position:fixed;
+	/*position:fixed;*/
 	bottom:10px;
 	width:100%;
 	margin: 0 auto;
@@ -49,7 +49,7 @@ body {
     outline: none;
 }
 
-#form {
+#nlForm {
 	height: 80%;
 	width: 255px;
 	margin: 1 auto;

@@ -6,7 +6,7 @@
 			<tr>
 				<td>
 					<div id="mailingList">
-						<form id="form" novalidate name="newsletterForm">
+						<form id="nlForm" novalidate name="newsletterForm">
 							<table class="table">
 								<thead>
 								</thead>
@@ -14,6 +14,7 @@
 									<tr>
 										<span>{{validationMsg}}</span>
 										<input class="form-control transparent" id="textBox" required ng-messages="newsletterForm.email.$error" type="email" name="emailAddress" ng-model="userEmail" placeholder="Enter Email Address" ng-change="validateEmail(userEmail, newsletterForm)">
+										
 										<button class="form-control transparent" id="submitBtn" ng-disabled="newsletterForm.$invalid" ng-click="addEmailAddress(userEmail); userEmail = null; successMessage()">Submit</button>
 									</tr>
 								</tbody>

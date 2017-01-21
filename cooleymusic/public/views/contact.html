@@ -1,34 +1,47 @@
-<div id="" class="container">
-	<form class="form" name="contactForm" novalidate>
+<div id="contactView" class="container">
 
-		<h3>Contact</h3>
-		<table class="table">
-			<thead>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
+
+	<h3>Contact</h3>
+	<table class="table">
+		<thead>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<form id="conForm" novalidate name="contactForm">
 						<span>Name</span>
-						<input class="form-control contactForm" required id="nameTextBox" type="text" name="name" placeholder="Name">
+						<input class="form-control transparent contactForm" id="nameTextBox" type="text" required name="name" placeholder="Name" ng-model="contact.name">
 
 						<span>Email</span>
-						<input class="form-control contactForm" required id="emailTextBox" type="email" name="email" placeholder="Email address">
+						<input class="form-control transparent contactForm" id="to" required type="email" name="email" placeholder="Email address" ng-model="contact.email">
 
 						<span>Message</span>
-						<textarea class="form-control contactForm" required id="messageTextArea" name="message" placeholder="Message">
-						</textarea>
+						<input class="form-control transparent contactForm" id="text" required name="message" placeholder="Message" ng-model="contact.message">
 
 						<br>
-						<button class="form-control contactForm" id="submitBtn" ng-disabled="contactForm.$invalid">Send</button>
-					</td>
-					<td>
-						<h3>Booking</h3>
+						<button class="form-control contactForm" id="send_email" ng-disabled="contactForm.$invalid" ng-click="sendMessage(contact)">Send</button>
+						<span id="message"></span>
+					</form>
+				</td>
+				<td>
+					<h3>Booking</h3>
 
-						<span>Mob: 6754738478568</span>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+					<span>Mob: 6754738478568</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div id="container">
+		<div></div>
+		Node.JS Email application
+		<div>
+			<h1>Mailer In Node.JS</h1>
+			<input id="emailTextBox" type="text" placeholder="Enter E-mail ID where you want to send" />
+			<textarea id="messageTextArea" cols="40" rows="5" placeholder="Write what you want to send"></textarea>
+			<button id="send_email">Send Email</button>
+			<span id="message"></span>
+		</div>
 
 		<br>
 		<br>
@@ -36,8 +49,8 @@
 
 
 
-	</form>
 
 
 
-</div>
+
+	</div>

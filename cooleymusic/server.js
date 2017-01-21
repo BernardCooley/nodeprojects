@@ -1,11 +1,19 @@
 var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
+var nodemailer = require("nodemailer");
 // var db = mongojs('tracks', ['tracks']);
 // var db = mongojs('setlist', ['setlist']);
 // var db = mongojs('users', ['users']);
 var db = mongojs('cooleyMusic', ['mailing_list']);
 var bodyParser = require('body-parser');
+var smtpTransport = nodemailer.createTransport("SMTP",{
+	service: "Gmail",
+	auth: {
+		user: "bernardcooley@gmail.com",
+		pass: "yeloocc1"
+	}
+});
 
 app.use(express.static(__dirname = '\public'));
 app.use(bodyParser.json());
@@ -30,6 +38,23 @@ app.get('/mailing_list/:email', function(req, res) {
 	console.log("Existing email validation: " + email);
 	db.mailing_list.findOne({email: email}, function(err, doc) {
 		res.json(doc);
+	});
+});
+
+app.get('/send', function(req, res) {
+	var mailOptions = {
+		to : req.query.to,
+		text : req.query.text
+	};
+	console.log(mailOptions);
+	smtpTransport.sendMail(mailOptions, function(error, response){
+		if(error){
+			console.log(error);
+			res.end("error");
+		}else{
+			console.log("Message sent: " + response.message);
+			res.end("sent");
+		}
 	});
 });
 
