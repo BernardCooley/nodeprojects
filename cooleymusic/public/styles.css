@@ -10,14 +10,14 @@ head {
 
 body {
     background-color: #2e3642;
-    /*background-image: url("images/background.jpg");*/
+    background-image: url("images/abstrack-background.jpg");
     /*background-image: url("images/concentration-gradient-3408.jpg");*/
     /*background-image: url("images/logo/png1.png");*/
     /*background-image: url("images/gradient-747800_1280.png");*/
     /*background-image: url("images/abstract-blue-background-technology-20522495.jpg");*/
-    background-size:600px 200px;
+    /*background-size:600px 200px;*/
     background-repeat: no-repeat;
-    background-position: 50% 20%;
+    /*background-position: 50% 20%;*/
     font-family: Geneva, Tahoma, Verdana, sans-serif;
     font-style: normal;
     font-variant: normal;
@@ -124,4 +124,8 @@ body {
 
 .headerImageContainer {
     text-align: center;
+}
+
+#body {
+    height: 550px;
 }
