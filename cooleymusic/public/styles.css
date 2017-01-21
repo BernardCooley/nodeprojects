@@ -1,38 +1,17 @@
-.centred{
-	margin: auto;
-    width: 70%;
-    padding: 10px;
-}
-
-head {
-    /*background-image: url("images/cooley-banner.jpg");*/
-}
-
 body {
     background-color: #2e3642;
     background-image: url("images/abstrack-background.jpg");
-    /*background-image: url("images/concentration-gradient-3408.jpg");*/
-    /*background-image: url("images/logo/png1.png");*/
-    /*background-image: url("images/gradient-747800_1280.png");*/
-    /*background-image: url("images/abstract-blue-background-technology-20522495.jpg");*/
-    /*background-size:600px 200px;*/
     background-repeat: no-repeat;
-    /*background-position: 50% 20%;*/
     font-family: Geneva, Tahoma, Verdana, sans-serif;
     font-style: normal;
     font-variant: normal;
     font-weight: 300;
     line-height: 26.4px;
     color: #FFFFFF;
+    background-size: 100% 100%;
 }
 
-/*.container {
-  transition: all linear 0.0s;
-  color: #FFFFFF;
-}*/
-
 #footer {
-	/*position:fixed;*/
 	bottom:10px;
 	width:100%;
 	margin: 0 auto;
@@ -118,14 +97,39 @@ body {
 }
 
 .contactForm {
-    width: 300px;
+    width: 400px;
     background-color: rgba(0, 0, 0, 0.5);
+    margin: auto;
+}
+
+.conFormContainer, .bookingContainer {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 400px;
+    margin: auto;
 }
 
 .headerImageContainer {
     text-align: center;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    /*background-color: rgba(247, 249, 249, 0.5);*/
 }
 
 #body {
     height: 550px;
 }
+
+#contactView {
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+}
+
+.contactFormLabels {
+    margin: auto;
+    text-align: center;
+}
+
+
+
+
+
+
+

@@ -2,9 +2,6 @@ var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
 var nodemailer = require("nodemailer");
-// var db = mongojs('tracks', ['tracks']);
-// var db = mongojs('setlist', ['setlist']);
-// var db = mongojs('users', ['users']);
 var db = mongojs('cooleyMusic', ['mailing_list']);
 var bodyParser = require('body-parser');
 var smtpTransport = nodemailer.createTransport("SMTP",{
@@ -41,28 +38,20 @@ app.get('/mailing_list/:email', function(req, res) {
 	});
 });
 
-app.get('/send', function(req, res) {
-	var email = req.body.to;
-	console.log("*****************************" + email);
-	// var mailOptions = {to : req.query.to, text : req.query.text};
-	// console.log(mailOptions);
-	// smtpTransport.sendMail(mailOptions, function(error, response){
-	// 	if(error){
-	// 		console.log(error);
-	// 		res.end("error");
-	// 	}else{
-	// 		console.log("Message sent: " + response.message);
-	// 		res.end("sent");
-	// 	}
-	// });
+app.post('/send', function(req, res) {
+	var mailOptions = {to : req.body.email, text : req.body.message};
+	console.log(mailOptions);
+	smtpTransport.sendMail(mailOptions, function(error, response){
+		if(error){
+			console.log(error);
+			res.end("error");
+		}else{
+			console.log("Message sent: " + response.message);
+			res.end("sent");
+		}
+	});
 });
 
-// app.post('/setlist', function(req, res) {
-// 	console.log(req.body);
-// 	db.setlist.insert(req.body, function(err, doc) {
-// 		res.json(doc);
-// 	});
-// });
 
 
 
