@@ -9,6 +9,7 @@ body {
     line-height: 26.4px;
     color: #000000;
     background-size: 100% 100%;
+
 }
 
 #footer {
@@ -74,13 +75,16 @@ body {
 
 .carousel-indicators {
     margin: auto;
+    float: left;
+    /*border: 15px solid;*/
+    width: 50%;
 }
 
 .scrollableContainer {
     /*height: 1000px;*/
     /*overflow-y: scroll;*/
     /*background-color:rgba(0, 0, 0, 0.5);*/
-    /*width: 50%;*/
+    width: 100%;
 }
 
 .contactForm {
