@@ -1,13 +1,13 @@
 body {
-    background-color: #2e3642;
-    background-image: url("images/abstrack-background.jpg");
+    /*background-color: #B8C5D6;*/
+    background-image: url("images/sky1.png");
     background-repeat: no-repeat;
-    font-family: Geneva, Tahoma, Verdana, sans-serif;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     font-style: normal;
     font-variant: normal;
     font-weight: 300;
     line-height: 26.4px;
-    color: #FFFFFF;
+    color: #000000;
     background-size: 100% 100%;
 }
 
@@ -15,45 +15,33 @@ body {
 	bottom:10px;
 	width:100%;
 	margin: 0 auto;
-    background-color:rgba(0, 0, 0, 0.5);
-}
-
-.navButton {
-	height: 80px;
-    width: 80px;
-    border-radius: 80px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    background-color:rgba(0, 0, 0, 0.5);
-    color: #FFFFFF;
-    outline: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 #nlForm {
-	height: 80%;
+	height: 50%;
 	width: 255px;
 	margin: 1 auto;
-	/*background-color:rgba(0, 0, 0, 0.5);*/
     padding: 10px;
 }
 
 .form {
-    height: 80%;
+    height: 50%;
     width: 100%;
     margin: 1 auto;
     padding: 10px;
 }
 
-#submitBtn {
-    background-color: rgba(0, 0, 0, 0.5);
+#submitBtn, #textBox {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid;
 }
 
-#textBox {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.active {
+/*.active {
     background-color: rgba(195, 194, 196, 0.5);
-}
+}*/
 
 .errorMsg {
     color: #870101;
@@ -68,21 +56,24 @@ body {
     right: 0;
 }
 
-.socialActions {
-	background-color:rgba(0, 0, 0, 0.5);
-}
-
 .socialIcon {
-	height: 60px;
+	height: 50px;
 	width: 80px;
 	padding: 10px;
 }
 
 .bodyContainer {
     height: 1000px;
-    /*background-color: red;*/
     width: 100%;
-    /*overflow-y: scroll;*/
+}
+
+#videoCarousel {
+    height: 520px;
+    margin: auto;
+}
+
+.carousel-indicators {
+    margin: auto;
 }
 
 .scrollableContainer {
@@ -92,40 +83,98 @@ body {
     /*width: 50%;*/
 }
 
-#videoCarousel {
-    height: 520px;
-}
-
 .contactForm {
     width: 400px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0);
     margin: auto;
+    border: 1px solid;
 }
 
 .conFormContainer, .bookingContainer {
-    background-color: rgba(0, 0, 0, 0.5);
+    /*background-color: rgba(0, 0, 0, 0.5);*/
     width: 400px;
     margin: auto;
 }
 
 .headerImageContainer {
     text-align: center;
-    /*background-color: rgba(0, 0, 0, 0.5);*/
-    /*background-color: rgba(247, 249, 249, 0.5);*/
 }
 
 #body {
-    height: 550px;
-}
-
-#contactView {
-    /*background-color: rgba(0, 0, 0, 0.5);*/
+    height: 660px;
+    position: relative;
 }
 
 .contactFormLabels {
     margin: auto;
     text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.topNav > ul {
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    width: 60%;
+    background-color: #f1f1f1;
+    /*border: 1px solid #555;*/
+    /*background-color: #dddddd;*/
+}
+
+.topNav > ul > li a {
+    display: block;
+    padding: 20px;
+    /*background-color: #dddddd;*/
+    color: #000000;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 20px;
+    /*font-weight: 50;*/
+    text-decoration: none;
+    /*line-height: 26.4px;*/
+}
+
+li {
+    display: inline;
+    float: left;
+}
+
+/* Change the link color on hover */
+.topNav > ul > li a:hover {
+    /*background-color: #555;*/
+    color: white;
+}
+
+.active {
+    /*background-color: #818D92;*/
+    color: white;
+    border-bottom: 2px solid;
+}
+
+.newsletterForm {
+    float: left;
+}
+
+.social{
+    float: right;
+}
+
+p {
+    font-size: 15px;
+}
+
+
 
 
 

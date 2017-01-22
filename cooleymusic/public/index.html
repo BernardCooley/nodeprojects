@@ -15,19 +15,20 @@
 
 </head>
 <body>
-
 	<div class="headerImageContainer">
 		<img class="headerImage" src="images/logo/png1.png" height="150px">
 	</div>
-
 	<div class="header" ng-include="'views/navigation.html'"></div>
-
+	<br>
+	<br>
+	<br>
 	<div id="body" class="container">
+	<br>
 		<ng-view></ng-view>
+		<br>
+		<br>
+		<div ng-include="'views/footer.html'"></div>
 	</div>
-
-	<div ng-include="'views/footer.html'"></div>
-	
 </div>
 
 
@@ -48,10 +49,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.8/angular-messages.js"></script>
 <script src="directives/angulike.js"></script>
 <script src="https://cdn.jsdelivr.net/angular.youtube-embed/0.4.3/ng-youtube-embed.min.js"></script>
-<!-- <script src="angular-touch.js"></script> -->
-<!-- <script src="angular-carousel.js"></script> -->
-<!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
-<!-- <script   src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="js/bootstrap.js"></script>
 </body>
 </html>

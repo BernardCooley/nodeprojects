@@ -1,5 +1,47 @@
 <div id="footer" class="container">
-	<table class="table">
+
+	<div class="footer">
+		<div class="newsletterForm">
+			<form id="nlForm" novalidate name="newsletterForm">
+				<span>{{validationMsg}}</span>
+				<input class="form-control transparent" id="textBox" required ng-messages="newsletterForm.email.$error" type="email" name="emailAddress" ng-model="userEmail" placeholder="Enter Email Address" ng-change="validateEmail(userEmail, newsletterForm)">
+				
+				<button class="form-control transparent" id="submitBtn" ng-disabled="newsletterForm.$invalid" ng-click="addEmailAddress(userEmail); userEmail = null; successMessage()">Submit</button>
+			</form>
+		</div>
+
+		<ul class="social">
+			<li>
+				<ul>
+					<li>
+						<a href="https://www.facebook.com/BCooleyMusic/" target="_blank"><img class="socialIcon navButton" src="images/social/face book.png"></a>
+					</li>
+					<li>
+						<a href="https://twitter.com/CooleyLeSprock" target="_blank"><img class="socialIcon navButton" src="images/social/twitter.png"></a>
+					</li>
+					<li>
+						<a href="https://soundcloud.com/bernard-cooley" target="_blank"><img class="socialIcon navButton" src="images/social/sound cloud.png"></a>
+					</li>
+					<li>
+						<a href="https://www.youtube.com/user/SPROCKET23" target="_blank"><img class="socialIcon navButton" src="images/social/youtube.png"></a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li fb-like="myModel.Url">
+					</li>
+					<li tweet="myModel.Name">
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+
+
+
+	<!-- <table class="table">
 		<thead>
 		</thead>
 		<tbody>
@@ -30,8 +72,11 @@
 							<tbody>
 								<tr>
 									<a href="https://www.facebook.com/BCooleyMusic/" target="_blank"><img class="socialIcon navButton" src="images/social/face book.png"></a>&nbsp;&nbsp;
+									
 									<a href="https://twitter.com/CooleyLeSprock" target="_blank"><img class="socialIcon navButton" src="images/social/twitter.png"></a>&nbsp;&nbsp;
+									
 									<a href="https://soundcloud.com/bernard-cooley" target="_blank"><img class="socialIcon navButton" src="images/social/sound cloud.png"></a>&nbsp;&nbsp;
+									
 									<a href="https://www.youtube.com/user/SPROCKET23" target="_blank"><img class="socialIcon navButton" src="images/social/youtube.png"></a>
 									<br>
 									<br>
@@ -54,5 +99,5 @@
 				</td>
 			</tr>
 		</tbody>
-	</table>
+	</table> -->
 </div>
