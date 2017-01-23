@@ -1,5 +1,4 @@
 body {
-    /*background-color: #B8C5D6;*/
     background-image: url("images/sky1.png");
     background-repeat: no-repeat;
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
@@ -9,15 +8,13 @@ body {
     line-height: 26.4px;
     color: #000000;
     background-size: 100% 100%;
-
 }
 
 #footer {
-	bottom:10px;
 	width:100%;
 	margin: 0 auto;
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     left: 0;
 }
 
@@ -68,8 +65,8 @@ body {
     width: 100%;
 }
 
-#videoCarousel {
-    height: 520px;
+#videos {
+    height: 470px;
     margin: auto;
 }
 
@@ -114,19 +111,6 @@ body {
     text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .topNav > ul {
     list-style-type: none;
     margin: auto;
@@ -149,9 +133,24 @@ body {
     /*line-height: 26.4px;*/
 }
 
-li {
+.topNav > ul > li {
     display: inline;
     float: left;
+}
+
+.social > li > ul > li {
+    display: inline;
+    float: left;
+}
+
+.social > li {
+    display: inline;
+    float: left;
+}
+
+li {
+    display: inline;
+    /*float: left;*/
 }
 
 /* Change the link color on hover */
@@ -171,18 +170,34 @@ li {
 }
 
 .social{
-    float: right;
+    
+    position: absolute; 
+    bottom: 0;
+    right: 0;
+    /*float: right;*/
 }
 
 p {
     font-size: 15px;
 }
 
+#musicList {
+    max-height: 480px;
+}
 
+.musicFrame {
+    width: 100%;
+    height: 120px;
+    float: right;
+}
 
+#musicListWrapper {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    
+}
 
-
-
-
-
-
+#mixCloudFollow {
+    float: left;
+}
