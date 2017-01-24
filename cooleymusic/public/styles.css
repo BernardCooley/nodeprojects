@@ -10,14 +10,6 @@ body {
     background-size: 100% 100%;
 }
 
-#footer {
-	width:100%;
-	margin: 0 auto;
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-}
-
 #nlForm {
 	height: 50%;
 	width: 255px;
@@ -37,10 +29,6 @@ body {
     border: 1px solid;
 }
 
-/*.active {
-    background-color: rgba(195, 194, 196, 0.5);
-}*/
-
 .errorMsg {
     color: #870101;
 }
@@ -55,13 +43,11 @@ body {
 }
 
 .socialIcon {
-	height: 50px;
-	width: 80px;
-	padding: 10px;
+	height: 20px;
+	width: 30px;
 }
 
 .bodyContainer {
-    height: 1000px;
     width: 100%;
 }
 
@@ -73,14 +59,10 @@ body {
 .carousel-indicators {
     margin: auto;
     float: left;
-    /*border: 15px solid;*/
     width: 50%;
 }
 
 .scrollableContainer {
-    /*height: 1000px;*/
-    /*overflow-y: scroll;*/
-    /*background-color:rgba(0, 0, 0, 0.5);*/
     width: 100%;
 }
 
@@ -92,7 +74,6 @@ body {
 }
 
 .conFormContainer, .bookingContainer {
-    /*background-color: rgba(0, 0, 0, 0.5);*/
     width: 400px;
     margin: auto;
 }
@@ -102,7 +83,7 @@ body {
 }
 
 #body {
-    height: 660px;
+    min-height: 660px;
     position: relative;
 }
 
@@ -111,56 +92,15 @@ body {
     text-align: center;
 }
 
-.topNav > ul {
-    list-style-type: none;
-    margin: auto;
-    padding: 0;
-    width: 60%;
-    background-color: #f1f1f1;
-    /*border: 1px solid #555;*/
-    /*background-color: #dddddd;*/
-}
-
-.topNav > ul > li a {
-    display: block;
-    padding: 20px;
-    /*background-color: #dddddd;*/
-    color: #000000;
-    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-    font-size: 20px;
-    /*font-weight: 50;*/
-    text-decoration: none;
-    /*line-height: 26.4px;*/
-}
-
-.topNav > ul > li {
-    display: inline;
-    float: left;
-}
-
-.social > li > ul > li {
-    display: inline;
-    float: left;
-}
-
-.social > li {
-    display: inline;
-    float: left;
-}
-
 li {
     display: inline;
-    /*float: left;*/
 }
 
-/* Change the link color on hover */
 .topNav > ul > li a:hover {
-    /*background-color: #555;*/
     color: white;
 }
 
 .active {
-    /*background-color: #818D92;*/
     color: white;
     border-bottom: 2px solid;
 }
@@ -170,11 +110,9 @@ li {
 }
 
 .social{
-    
     position: absolute; 
     bottom: 0;
     right: 0;
-    /*float: right;*/
 }
 
 p {
@@ -200,4 +138,42 @@ p {
 
 #mixCloudFollow {
     float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a {
+    display: block;
+    padding: 20px;
+    color: #000000;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.text-center {
+   text-align:center
+}
+
+a:link {
+    text-decoration: none;
 }

@@ -1,4 +1,74 @@
-<div id="footer" class="container">
+<div class="container">
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-3">
+			<div class="row">
+				<span>{{validationMsg}}</span>
+			</div>
+			<div class="row">
+				<input class="form-control transparent" id="textBox" required ng-messages="newsletterForm.email.$error" type="email" name="emailAddress" ng-model="userEmail" placeholder="Enter Email Address" ng-change="validateEmail(userEmail, newsletterForm)">
+			</div>
+			<div class="row">
+				<button class="form-control transparent" id="submitBtn" ng-disabled="newsletterForm.$invalid" ng-click="addEmailAddress(userEmail); userEmail = null; successMessage()">Submit</button>
+				<br>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3">
+			
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3">
+			
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3">
+			<div class="row">
+				<div class="col-lg-3 col-sm-3 col-xs-3 text-center">
+					<a href="https://www.facebook.com/BCooleyMusic/" target="_blank"><img class="socialIcon navButton" src="images/social/face book.png"></a>
+				</div>
+				<div class="col-lg-3 col-sm-3 col-xs-3 text-center">
+					<a href="https://twitter.com/CooleyLeSprock" target="_blank"><img class="socialIcon navButton" src="images/social/twitter.png"></a>
+				</div>
+				<div class="col-lg-3 col-sm-3 col-xs-3 text-center">
+					<a href="https://soundcloud.com/bernard-cooley" target="_blank"><img class="socialIcon navButton" src="images/social/sound cloud.png"></a>
+				</div>
+				<div class="col-lg-3 col-sm-3 col-xs-3 text-center">
+					<a href="https://www.youtube.com/user/SPROCKET23" target="_blank"><img class="socialIcon navButton" src="images/social/youtube.png"></a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-sm-4 text-center" fb-like="myModel.Url"></div>
+				<div class="col-lg-4 col-sm-4"><br></div>
+				<div class="col-lg-4 col-sm-4 text-center" tweet="myModel.Name"></div>
+				<br>
+				<br>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div id="footer" class="container">
 
 	<div class="footer">
 		<div class="newsletterForm">
@@ -36,7 +106,7 @@
 				</ul>
 			</li>
 		</ul>
-	</div>
+	</div> -->
 
 
 
@@ -100,4 +170,4 @@
 			</tr>
 		</tbody>
 	</table> -->
-</div>
+<!-- </div> -->
