@@ -1,4 +1,51 @@
-<div id="contactView" class="container">
+<div class="container">
+	<div class="row">
+	<div class="col-lg-4 col-md-4 col-sm-3 col-xs-1"></div>
+	<div class="col-lg-4 col-md-4 col-sm-6 col-xs-10">
+		<form id="conForm" novalidate name="contactForm">
+			<input class="form-control transparent contactForm" id="nameTextBox" type="text" required name="name" placeholder="Name" ng-model="contact.name">
+			<br>
+			<input class="form-control transparent contactForm" id="to" required type="email" name="email" placeholder="Email address" ng-model="contact.email">
+			<br>
+			<textarea class="form-control transparent contactForm" id="text" required name="message" placeholder="Message" ng-model="contact.message">
+			</textarea>
+			<br>
+			<button class="form-control contactForm" id="submitBtn" ng-disabled="contactForm.$invalid" ng-click="sendMessage(contact)">Send</button>
+			<span id="message"></span>
+			<br>
+			<br>
+		</form>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-3 col-xs-1"></div>
+	</div>
+	<div class="row">
+		<h3 class="contactFormLabels">Booking</h3>
+		<h5 class="contactFormLabels">bernardcooley@gmail.com</h5>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div id="contactView" class="container">
 
 <h3 class="contactFormLabels">Contact</h3>
 <br>
@@ -8,17 +55,13 @@
 		</thead>
 		<tbody>
 			<tr>
-				<!-- <td> -->
 				<div class="conFormContainer">
 					<form id="conForm" novalidate name="contactForm">
 
-						<!-- <h5 class="contactFormLabels">Name</h5> -->
 						<input class="form-control transparent contactForm" id="nameTextBox" type="text" required name="name" placeholder="Name" ng-model="contact.name">
 						<br>
-						<!-- <h5 class="contactFormLabels">Email</h5> -->
 						<input class="form-control transparent contactForm" id="to" required type="email" name="email" placeholder="Email address" ng-model="contact.email">
 						<br>
-						<!-- <h5 class="contactFormLabels">Message</h5> -->
 						<textarea class="form-control transparent contactForm" id="text" required name="message" placeholder="Message" ng-model="contact.message">
 						</textarea>
 						<br>
@@ -33,13 +76,9 @@
 
 					<h5 class="contactFormLabels">bernardcooley@gmail.com</h5>
 					</div>
-				<!-- </td> -->
-				<!-- <td>
-					
-				</td> -->
 			</tr>
 		</tbody>
 	</table>
 		<br>
 		<br>
-	</div>
+	</div> -->
