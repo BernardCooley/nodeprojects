@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute', 'ngMessages', 'angulike', 'ngYoutubeEmbed', 'ngScrollbar'])
+var myApp = angular.module('myApp', ['ngRoute', 'ngMessages', 'angulike', 'ui.bootstrap']);
 
 myApp.controller('MainController', ['$scope', '$http', '$location', function ($scope, $http, $location){
 	console.log("Main controller");
@@ -56,9 +56,17 @@ myApp.controller('MainController', ['$scope', '$http', '$location', function ($s
 	};
 
 	$scope.myModel = {
-              Url: 'https://www.facebook.com/BCooleyMusic/',
-              Name: "Cooley's new artist website.",
-              ImageUrl: 'http://www.jasonwatmore.com/pics/jason.jpg'
-          };
+      Url: 'https://www.facebook.com/BCooleyMusic/',
+      Name: "Cooley's new artist website.",
+      ImageUrl: 'http://www.jasonwatmore.com/pics/jason.jpg'
+    };
+
+
+
 
 }]);
+
+
+
+
+
