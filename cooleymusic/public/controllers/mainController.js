@@ -12,6 +12,7 @@ myApp.controller('MainController', ['$scope', '$http', '$location', function ($s
 	$scope.failureShow = false;
 	$scope.navShow = true;
 	$scope.validationMsg = "Sign up to mailing list for updates";
+	$scope.navMenuVisible = "false";
 
 	$scope.addEmailAddress = function(userEmail) {
 		console.log("add email address");
@@ -60,6 +61,8 @@ myApp.controller('MainController', ['$scope', '$http', '$location', function ($s
       Name: "Cooley's new artist website.",
       ImageUrl: 'http://www.jasonwatmore.com/pics/jason.jpg'
     };
+
+
 
 
 

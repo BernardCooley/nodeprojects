@@ -13,32 +13,34 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="" ng-class="{active: isActive('/')}" ng-click="changeView('home')">Home</a>
+        <h4 class="navbar-toggle" ng-init="currentPage = 'Home'">&nbsp&nbsp&nbsp{{currentPage}}</h4>
+        <!-- <a class="navbar-brand" href="" ng-class="{active: isActive('/')}" ng-click="changeView('home')">Home</a> -->
       </div>
     
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
       
         <ul class="nav navbar-nav">
-          <li class=""><a href="" ng-class="{active: isActive('/about')}" ng-click="changeView('about')">About</a></li>
+        <li class=""><a ng-click="navCollapsed = !navCollapsed; changeView('home'); currentPage='Home'" href="" ng-class="{active: isActive('/')}">Home</a></li>
+          <li class=""><a ng-click="navCollapsed = !navCollapsed; changeView('about'); currentPage='About'" href="" ng-class="{active: isActive('/about')}">About</a></li>
           
           <li dropdown>
             <a href="" dropdown-toggle>Media<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="" ng-class="{active: isActive('/photos')}" ng-click="changeView('photos')">Photos</a></li>
-              <li><a href="" ng-class="{active: isActive('/videos')}" ng-click="changeView('videos')">Videos</a></li>
+              <li><a ng-click="navCollapsed = !navCollapsed; changeView('photos'); currentPage='Photos'" href="" ng-class="{active: isActive('/photos')}">Photos</a></li>
+              <li><a ng-click="navCollapsed = !navCollapsed; changeView('videos'); currentPage='Videos'" href="" ng-class="{active: isActive('/videos')}">Videos</a></li>
             </ul>
           </li>
           
           <li dropdown>
             <a href="" dropdown-toggle>Music<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="" ng-class="{active: isActive('/releases')}" ng-click="changeView('releases')">Releases</a></li>
-              <li><a href="" ng-class="{active: isActive('/music')}" ng-click="changeView('music')">Mixes</a></li>
+              <li><a ng-click="navCollapsed = !navCollapsed; changeView('releases'); currentPage='Releases'" href="" ng-class="{active: isActive('/releases')}">Releases</a></li>
+              <li><a ng-click="navCollapsed = !navCollapsed; changeView('music'); currentPage='Mixes'" href="" ng-class="{active: isActive('/music')}">Mixes</a></li>
             </ul>
           </li>
-          <li><a href="" ng-class="{active: isActive('/gigs')}" ng-click="changeView('gigs')">Gigs</a></li>
-          <li><a href="" ng-class="{active: isActive('/contact')}" ng-click="changeView('contact')">Contact</a></li>
+          <li><a ng-click="navCollapsed = !navCollapsed; changeView('gigs'); currentPage='Gigs'" href="" ng-class="{active: isActive('/gigs')}">Gigs</a></li>
+          <li><a ng-click="navCollapsed = !navCollapsed; changeView('contact'); currentPage='Contact'" href="" ng-class="{active: isActive('/contact')}">Contact</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
