@@ -1,0 +1,13 @@
+Launch instance
+Note public DNS
+Open putty
+Paste public DNS into Host Name field
+SSH > Auth locate pkk file and load
+Click Open
+Log in as bitnami
+$ cd apps/nodeprojects
+$ sudo git pull
+$ cd cooleymusic
+$ node server.js
+$ forever start server.js
+Open <public DNS>:<port> in browser
