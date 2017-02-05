@@ -10,7 +10,7 @@
 			<textarea class="form-control transparent contactForm" id="text" required name="message" placeholder="Message" ng-model="contact.message">
 			</textarea>
 			<br>
-			<button class="form-control contactForm" id="submitBtn" ng-disabled="contactForm.$invalid" ng-click="sendMessage(contact)">Send</button>
+			<button class="form-control contactForm" id="submitBtn" ng-disabled="contactForm.$invalid" ng-click="sendMessage(contact); validateContactEmail()">Send</button>
 			<span id="message"></span>
 			<br>
 			<br>

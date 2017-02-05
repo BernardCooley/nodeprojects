@@ -26,7 +26,7 @@ myApp.controller('MainController', ['$scope', '$http', '$location', function ($s
 	$scope.validateEmail = function(email, newsletterForm) {
 		var email = $scope.userEmail;
 		console.log("Validate existing email called " + email);
-		$http.get('/mailing_list/' + {email: email}).success(function(response) {
+		$http.get('/mailing_list/' + email).success(function(response) {
 			console.log("Response: " + response);
 			if(response == null || email == '') {
 				$scope.validationMsg = "Sign up to mailing list for updates";
