@@ -17,22 +17,23 @@ myApp.controller('MainController', ['$scope', '$http', '$location', function ($s
 	$scope.addEmailAddress = function(userEmail) {
 		console.log("add email address");
 		var email = $scope.userEmail;
-		console.log(email);
-		$http.post('/mailing_list', userEmail).success(function(response) {
+		console.log("Email: " + email);
+		$http.post('/mailing_list', {email: email}).success(function(response) {
 				console.log(response);
 			});
 	};
 
 	$scope.validateEmail = function(email, newsletterForm) {
+		var email = $scope.userEmail;
 		console.log("Validate existing email called " + email);
-		$http.get('/mailing_list/' + email).success(function(response) {
+		$http.get('/mailing_list/' + {email: email}).success(function(response) {
 			console.log("Response: " + response);
 			if(response == null || email == '') {
 				$scope.validationMsg = "Sign up to mailing list for updates";
-				newsletterForm.emailAddress.$setValidity("unique", true);
+				$scope.newsletterForm.emailAddress.$setValidity("unique", true);
 			} else {
 				$scope.validationMsg = "Email already exists";
-				newsletterForm.emailAddress.$setValidity("unique", false);
+				$scope.newsletterForm.emailAddress.$setValidity("unique", false);
 			}
 		});
 	};

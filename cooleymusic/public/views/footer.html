@@ -1,16 +1,18 @@
-<div class="container">
+<div class="container" ng-controller="MainController">
 	<div class="row">
 		<div class="col-lg-3 col-md-3 col-sm-3">
 			<div class="row">
 				<span>{{validationMsg}}</span>
 			</div>
-			<div class="row">
-				<input class="form-control transparent" id="textBox" required ng-messages="newsletterForm.email.$error" type="email" name="emailAddress" ng-model="userEmail" placeholder="Enter Email Address" ng-change="validateEmail(userEmail, newsletterForm)">
-			</div>
-			<div class="row">
-				<button class="form-control transparent" id="submitBtn" ng-disabled="newsletterForm.$invalid" ng-click="addEmailAddress(userEmail); userEmail = null; successMessage()">Submit</button>
-				<br>
-			</div>
+			<form name="newsletterForm" novalidate>
+				<div class="row">
+					<input class="form-control transparent" id="textBox" required ng-messages="newsletterForm.email.$error" type="email" name="emailAddress" ng-model="userEmail" placeholder="Enter Email Address" ng-change="validateEmail(userEmail, newsletterForm)">
+				</div>
+				<div class="row">
+					<button class="form-control transparent" id="submitBtn" ng-disabled="newsletterForm.$invalid" ng-click="addEmailAddress(userEmail); userEmail = null; successMessage()">Submit</button>
+					<br>
+				</div>
+			</form>
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-3">
 			

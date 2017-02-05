@@ -16,7 +16,7 @@ app.use(express.static(__dirname = '\public'));
 app.use(bodyParser.json());
 
 app.post('/mailing_list', function(req, res) {
-	console.log(req.body);
+	console.log("Request body: " + req.body);
 	db.mailing_list.insert(req.body, function(err, doc) {
 		res.json(doc);
 	});
