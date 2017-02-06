@@ -7,19 +7,20 @@ myApp.controller('ContactController', function($scope, $http, $location) {
 	};
 
 	$scope.validateContactEmail = function() {
-		var emailAddress = $scope.contact.email;
-		console.log("Validate existing email called " + emailAddress);
-		$http.get('/mailing_list/' + emailAddress).success(function(response) {
-			console.log("Response: " + response);
+		var checkboxState = $scope.check;
+		console.log("Checkbox state: " + checkboxState);
+		if(checkboxState) {
+			var emailAddress = $scope.contact.email;
+			console.log("Validate existing email called " + emailAddress);
+			$http.get('/mailing_list/' + emailAddress).success(function(response) {
+				console.log("Response: " + response);
 				if(response == null || emailAddress == '') {
-					console.log("Email: " + email);
+					console.log("Email: " + emailAddress);
 					$http.post('/mailing_list', {email: emailAddress}).success(function(response) {
-					console.log(response);
-				});
-			}
-		});
+						console.log(response);
+					});	
+				}
+			});
+		}
 	};
-
-
-
 });
