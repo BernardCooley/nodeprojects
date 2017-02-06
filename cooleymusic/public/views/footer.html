@@ -9,7 +9,7 @@
 					<input class="form-control transparent" id="textBox" required ng-messages="newsletterForm.email.$error" type="email" name="emailAddress" ng-model="userEmail" placeholder="Enter Email Address" ng-change="validateEmail(userEmail, newsletterForm)">
 				</div>
 				<div class="row">
-					<button class="form-control transparent" id="submitBtn" ng-disabled="newsletterForm.$invalid" ng-click="addEmailAddress(userEmail); userEmail = null; successMessage()">Submit</button>
+					<button class="form-control transparent" id="submitBtn" ng-disabled="newsletterForm.$invalid" ng-click="addEmailAddress(userEmail); userEmail = null; successMessage()">Sign Up!</button>
 					<br>
 				</div>
 			</form>

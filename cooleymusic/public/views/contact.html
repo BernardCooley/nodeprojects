@@ -3,16 +3,17 @@
 	<div class="col-lg-4 col-md-4 col-sm-3 col-xs-1"></div>
 	<div class="col-lg-4 col-md-4 col-sm-6 col-xs-10">
 		<form id="conForm" novalidate name="contactForm">
+		<h3>{{successMessage}}</h3>
 			<input class="form-control transparent contactForm" id="nameTextBox" type="text" required name="name" placeholder="Name" ng-model="contact.name">
 			<br>
 			<input class="form-control transparent contactForm" id="to" required type="email" name="email" placeholder="Email address" ng-model="contact.email">
 			<br>
 			<textarea class="form-control transparent contactForm" id="text" required name="message" placeholder="Message" ng-model="contact.message">
 			</textarea>
+			<span><input type="checkbox" name="mailingListCheckbox" ng-model="check">&nbsp;&nbsp;Sign up to our mailing list</span>
+			<br>
 			<br>
 			<button class="form-control contactForm" id="submitBtn" ng-disabled="contactForm.$invalid" ng-click="sendMessage(contact); validateContactEmail()">Send</button>
-			<br>
-			<span><input type="checkbox" name="mailingListCheckbox" ng-model="check">&nbsp;&nbsp;Sign up to our mailing list</span>
 			<span id="message"></span>
 			<br>
 			<br>
