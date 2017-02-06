@@ -3600,7 +3600,7 @@ tbody.collapse.in {
     outline: 0
 }
 .dropdown-menu {
-    position: absolute;
+    /*position: absolute;*/
     top: 100%;
     left: 0;
     z-index: 1000;
@@ -3612,9 +3612,9 @@ tbody.collapse.in {
     font-size: 14px;
     text-align: left;
     list-style: none;
-    background-color: #fff;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
+    /*background-color: #fff;*/
+    /*-webkit-background-clip: padding-box;*/
+    /*background-clip: padding-box;*/
     border: 1px solid #ccc;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: 4px;
@@ -4450,7 +4450,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
         background-image: none
     }
 }
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
     .navbar-nav {
         float: left;
         margin: 0
@@ -4462,7 +4462,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
         padding-top: 15px;
         padding-bottom: 15px
     }
-}
+}*/
 .navbar-form {
     padding: 10px 15px;
     margin-top: 8px;
@@ -4592,8 +4592,8 @@ textarea.input-group-sm>.input-group-btn>.btn {
     }
 }
 .navbar-default {
-    background-color: #f8f8f8;
-    border-color: #e7e7e7
+    /*background-color: #f8f8f8;*/
+    /*border-color: #e7e7e7*/
 }
 .navbar-default .navbar-brand {
     color: #777

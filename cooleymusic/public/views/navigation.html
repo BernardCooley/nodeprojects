@@ -1,71 +1,40 @@
 <div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
 
+      <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <h4 class="navbar-toggle1" ng-init="currentPage = 'Home'">&nbsp;&nbsp;&nbsp;{{currentPage}}</h4>
+    </div>
 
-	
-
-<nav class="navbar navbar-default" role="navigation">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-
-        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <h4 class="navbar-toggle1" ng-init="currentPage = 'Home'">&nbsp&nbsp&nbsp{{currentPage}}</h4>
-        <!-- <a class="navbar-brand" href="" ng-class="{active: isActive('/')}" ng-click="changeView('home')">Home</a> -->
-      </div>
+    <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
     
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
-      
-        <ul class="nav navbar-nav">
-        <li class=""><a ng-click="navCollapsed = !navCollapsed; changeView('home'); currentPage='Home'" href="" ng-class="{active: isActive('/')}">Home</a></li>
-          <li class=""><a ng-click="navCollapsed = !navCollapsed; changeView('about'); currentPage='About'" href="" ng-class="{active: isActive('/about')}">About</a></li>
-          
-          <li dropdown>
-            <a href="" dropdown-toggle>Media<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a ng-click="navCollapsed = !navCollapsed; changeView('photos'); currentPage='Photos'" href="" ng-class="{active: isActive('/photos')}">Photos</a></li>
-              <li><a ng-click="navCollapsed = !navCollapsed; changeView('videos'); currentPage='Videos'" href="" ng-class="{active: isActive('/videos')}">Videos</a></li>
-            </ul>
-          </li>
-          
-          <li dropdown>
-            <a href="" dropdown-toggle>Music<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a ng-click="navCollapsed = !navCollapsed; changeView('releases'); currentPage='Releases'" href="" ng-class="{active: isActive('/releases')}">Releases</a></li>
-              <li><a ng-click="navCollapsed = !navCollapsed; changeView('music'); currentPage='Mixes'" href="" ng-class="{active: isActive('/music')}">Mixes</a></li>
-            </ul>
-          </li>
-          <li><a ng-click="navCollapsed = !navCollapsed; changeView('gigs'); currentPage='Gigs'" href="" ng-class="{active: isActive('/gigs')}">Gigs</a></li>
-          <li><a ng-click="navCollapsed = !navCollapsed; changeView('contact'); currentPage='Contact'" href="" ng-class="{active: isActive('/contact')}">Contact</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </nav>
-
-
-
-
-	<!-- <div class="row">
-		<div class="col-lg-2 col-md-4 col-sm-5 text-center">
-			<a href="" ng-class="{active: isActive('/')}" ng-click="changeView('home')">Home</a>
-		</div>
-		<div class="col-lg-2 col-md-4 col-sm-5 text-center">
-			<a href="" ng-class="{active: isActive('/about')}" ng-click="changeView('about')">About</a>
-		</div>
-		<div class="col-lg-2 col-md-4 col-sm-5 text-center">
-			<a href="" ng-class="{active: isActive('/music')}" ng-click="changeView('music')">Music</a>
-		</div>
-		<div class="col-lg-2 col-md-4 col-sm-5 text-center">
-			<a href="" ng-class="{active: isActive('/photos')}" ng-click="changeView('photos')">Photos</a>
-		</div>
-		<div class="col-lg-2 col-md-4 col-sm-5 text-center">
-			<a href="" ng-class="{active: isActive('/gigs')}" ng-click="changeView('gigs')">Gigs</a>
-		</div>
-		<div class="col-lg-2 col-md-4 col-sm-5 text-center">
-			<a href="" ng-class="{active: isActive('/contact')}" ng-click="changeView('contact')">Contact</a>
-		</div>
-	</div> -->
+      <ul class="nav navbar-nav">
+      <li class=""><a ng-click="navCollapsed = !navCollapsed; changeView('home'); currentPage='Home'" href="" ng-class="{active: isActive('/')}">Home</a></li>
+        <li class=""><a ng-click="navCollapsed = !navCollapsed; changeView('about'); currentPage='About'" href="" ng-class="{active: isActive('/about')}">About</a></li>
+        
+        <li dropdown>
+          <a href="" dropdown-toggle>Media<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a ng-click="navCollapsed = !navCollapsed; changeView('photos'); currentPage='Photos'" href="" ng-class="{active: isActive('/photos')}">Photos</a></li>
+            <li><a ng-click="navCollapsed = !navCollapsed; changeView('videos'); currentPage='Videos'" href="" ng-class="{active: isActive('/videos')}">Videos</a></li>
+          </ul>
+        </li>
+        
+        <li dropdown>
+          <a href="" dropdown-toggle>Music<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a ng-click="navCollapsed = !navCollapsed; changeView('releases'); currentPage='Releases'" href="" ng-class="{active: isActive('/releases')}">Releases</a></li>
+            <li><a ng-click="navCollapsed = !navCollapsed; changeView('music'); currentPage='Mixes'" href="" ng-class="{active: isActive('/music')}">Mixes</a></li>
+          </ul>
+        </li>
+        <li><a ng-click="navCollapsed = !navCollapsed; changeView('gigs'); currentPage='Gigs'" href="" ng-class="{active: isActive('/gigs')}">Gigs</a></li>
+        <li><a ng-click="navCollapsed = !navCollapsed; changeView('contact'); currentPage='Contact'" href="" ng-class="{active: isActive('/contact')}">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 </div>
