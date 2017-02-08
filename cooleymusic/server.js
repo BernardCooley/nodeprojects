@@ -3,6 +3,8 @@ var app = express();
 var mongojs = require('mongojs');
 var nodemailer = require("nodemailer");
 var db = mongojs('cooleyMusic', ['mailing_list']);
+var db2 = mongojs('cooleyMusic', ['messages']);
+var db3 = mongojs('cooleyMusic', ['bookings']);
 var bodyParser = require('body-parser');
 var smtpTransport = nodemailer.createTransport("SMTP",{
 	service: "Gmail",
@@ -38,8 +40,24 @@ app.get('/mailing_list/:email', function(req, res) {
 	});
 });
 
+app.get('/messages', function (req, res) {
+	console.log("I recieved a get request");
+	db2.messages.find(function (err, docs) {
+		console.log(docs);
+		res.json(docs);
+	});
+});
+
+app.get('/bookings', function (req, res) {
+	console.log("I recieved a get request");
+	db3.bookings.find(function (err, docs) {
+		console.log(docs);
+		res.json(docs);
+	});
+});
+
 app.post('/send', function(req, res) {
-	var mailOptions = {to : req.body.email, text : req.body.message};
+	var mailOptions = {to : req.body.email, text : req.body.message + "**************Testing"};
 	console.log(mailOptions);
 	smtpTransport.sendMail(mailOptions, function(error, response){
 		if(error){
@@ -52,6 +70,15 @@ app.post('/send', function(req, res) {
 	});
 });
 
+app.post('/storeMessage', function(req, res) {
+	var date = new Date();
+	var dateString = date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear();
+	var insertJson = {name: req.body.name, email: req.body.email, message:req.body.message, date: dateString};
+	console.log(insertJson);
+	db2.messages.insert(insertJson, function(err, doc) {
+		res.json(doc);
+	});
+});
 
 
 

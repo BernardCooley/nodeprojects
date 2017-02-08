@@ -1,0 +1,24 @@
+<div class="container" ng-show="show">
+	<table class="table">
+		<thead>
+			<tr>
+				<td><h4></h4>Venue</h4></td>
+				<td><h4>Location</h4></td>
+				<td><h4>Contact</h4></td>
+				<td><h4>Date</h4></td>
+				<td><h4>Play time</h4></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="booking in bookings">
+				<td>{{booking.venue}}</td>
+				<td>{{booking.location}}</td>
+				<td>{{booking.contact}}</td>
+				<td>{{booking.date}}</td>
+				<td>{{booking.playtime}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+</div>

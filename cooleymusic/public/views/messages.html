@@ -1,0 +1,22 @@
+<div class="container" ng-show="show">
+	<table class="table">
+		<thead>
+			<tr>
+				<td><h4></h4>Name</h4></td>
+				<td><h4>Email</h4></td>
+				<td><h4>Message</h4></td>
+				<td><h4>Date</h4></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="message in messages">
+				<td>{{message.name}}</td>
+				<td>{{message.email}}</td>
+				<td>{{message.message}}</td>
+				<td>{{message.date}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+</div>

@@ -32,6 +32,14 @@ myApp.config(function ($routeProvider, $locationProvider) {
 		templateUrl : 'views/releases.html',
 		controller : 'ReleasesController'
 	})
+	.when('/messages', {
+		templateUrl : 'views/messages.html',
+		controller : 'MessagesController'
+	})
+	.when('/bookings', {
+		templateUrl : 'views/bookings.html',
+		controller : 'BookingsController'
+	})
 	.otherwise(
 	{
 		templateUrl : '<div>No Page</div>'
