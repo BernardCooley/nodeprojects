@@ -1,5 +1,5 @@
 myApp.controller('ContactController', function($scope, $http, $location, $timeout) {
-	$scope.successMessage = "Send message";
+	$scope.successMessage = "Send message / Booking enquiries";
 	console.log("Contact controller");
 		$scope.sendMessage = function() {
 		$scope.successMessage = "Sending...";
@@ -7,7 +7,7 @@ myApp.controller('ContactController', function($scope, $http, $location, $timeou
 		$http.post('http://localhost:3000/send', $scope.contact).success(function(data){
 			if(data == "sent") {
 				$scope.successMessage = "Message sent";
-				$timeout(function () { $scope.successMessage = "Send message"; }, 3000);
+				$timeout(function () { $scope.successMessage = "Send message / Booking enquiries"; }, 3000);
 				console.log("Contact form submitted");
 				$scope.contact = null;
 				$scope.check = false;
