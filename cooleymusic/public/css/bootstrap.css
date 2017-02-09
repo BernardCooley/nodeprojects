@@ -1112,8 +1112,15 @@ img {
 .thumbnail a>img,
 .thumbnail>img {
     display: block;
-    max-width: 100%;
-    height: auto
+    max-width: 80%;
+    height: auto;
+    margin: auto;
+}
+.img-responsive-header {
+    display: block;
+    max-width: 80%;
+    height: auto;
+    margin: auto;
 }
 .img-rounded {
     border-radius: 6px
