@@ -4,9 +4,9 @@ myApp.config(function ($routeProvider, $locationProvider) {
 		templateUrl : 'views/home.html',
 		controller : 'HomeController'
 	})
-	.when('/about', {
-		templateUrl : 'views/about.html',
-		controller : 'AboutController'
+	.when('/news', {
+		templateUrl : 'views/news.html',
+		controller : 'NewsController'
 	})
 	.when('/music', {
 		templateUrl : 'views/music.html',

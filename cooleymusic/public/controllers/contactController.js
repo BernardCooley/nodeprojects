@@ -1,5 +1,5 @@
 myApp.controller('ContactController', function($scope, $http, $location, $timeout) {
-	$scope.successMessage = "Send message / Booking enquiries";
+	$scope.successMessage = "Send message / Booking enquiry";
 	console.log("Contact controller");
 		$scope.sendMessage = function() {
 		$scope.successMessage = "Sending...";

@@ -42,11 +42,6 @@ body {
     right: 0;
 }
 
-.socialIcon {
-	height: 20px;
-	width: 30px;
-}
-
 .bodyContainer {
     width: 100%;
 }
@@ -206,3 +201,13 @@ p {
         padding-bottom: 15px
     }
 }
+
+#footerContainer {
+    border-top: 1px solid;
+}
+
+#fbLike {
+    border: 1px solid;
+}
+
+
