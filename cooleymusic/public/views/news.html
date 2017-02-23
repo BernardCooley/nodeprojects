@@ -1,3 +1,18 @@
-<div class="container" ng-show="show">
-	
+<div class="container newsContainer">
+
+	<div class="newsScroller">
+		<div class="row newsRow" ng-repeat="content in newsContent | orderBy: '-date'">
+			<div class="col-lg-3">
+				<br><h4>{{content.date | date:'EEE dd MMM yyyy'}}</h4><br>
+			</div>
+			<div class="col-lg-9">
+				<div class="row">
+					<br><h4>{{content.contentTitle}}</h4><br>
+				</div>
+				<div class="row">
+					{{content.content}}<br><br>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

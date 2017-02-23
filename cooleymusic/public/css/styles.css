@@ -210,4 +210,21 @@ p {
     border: 1px solid;
 }
 
+.newsRow {
+    border-bottom: 1px dotted;
+}
+
+.newsContainer, .mixesContainer {
+    border: 0px solid;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.mixesContainer {
+    max-height: 500px;
+    overflow: auto;
+    border: 0px solid;
+}
+
+
 
