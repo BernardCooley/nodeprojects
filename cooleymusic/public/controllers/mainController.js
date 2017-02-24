@@ -62,12 +62,6 @@ myApp.controller('MainController', ['$scope', '$http', '$location', function ($s
       Name: "Cooley's new artist website.",
       ImageUrl: 'http://www.jasonwatmore.com/pics/jason.jpg'
     };
-
-
-
-
-
-
 }]);
 
 

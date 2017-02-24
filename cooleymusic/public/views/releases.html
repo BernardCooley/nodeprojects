@@ -1,35 +1,38 @@
 <div class="container releasesContainer">
 	<div>
 
-		<div class="row releaseRow">
+		<div class="row">
 			<h3>
 				<div class="col-lg-2">Release Date</div>
 				<div class="col-lg-2">Title</div>
 				<div class="col-lg-2">Label</div>
-				<div class="col-lg-1">Mixes</div>
+				<div class="col-lg-2">Mixes</div>
+				<div class="col-lg-4">Buy</div>
 			</h3>
 		</div>
 		<br>
-		<div class="row releaseRow" ng-repeat="release in releases | orderBy: 'releaseDate'">
+		<div class="row" ng-repeat="release in releases | orderBy: '-releaseDate'">
+		<br>
 			<div class="col-lg-2">
-				{{release.releaseDate | date:'EEE dd MMM, yyyy'}}<br>
+				{{release.releaseDate | date:'dd MMM, yyyy'}}<br>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-2">
 				{{release.title}}<br>
 			</div>
-			<div class="col-lg-3">
+			<div class="col-lg-2">
 				{{release.label}}<br>
 			</div>
-			<div class="col-lg-3">
-				<div class="row releaseRow" ng-repeat="mix in release.mixes">
+			<div class="col-lg-2">
+				<div class="row" ng-repeat="mix in release.mixes">
 					<div class="col-lg-12">{{mix}}</div>
 				</div>
 			</div>
-			<div class="row releaseRow">
-				<div class="col-lg-12" ng-repeat="link in release.links">
-					<div class="col-lg-3" ng-repeat="(key, val) in link">
-						<a href="{{val}}">{{key}}</a>
-					</div>
+			<div class="col-lg-4" ng-repeat="link in release.links">
+				<div class="row">
+					<div class="col-lg-6"><button class="sale_btm" ng-click="saleLinkClick(release.links[0].Beatport)"><img src="images/sale_links/beatport_1.png" height="20px"></button></div>
+					<div class="col-lg-6"><button class="sale_btm" ng-click="saleLinkClick(release.links[0].Traxsource)"><img src="images/sale_links/traxsourceLogo-thumb.png" height="20px"></button></div>
+					<div class="col-lg-6"><button class="sale_btm" ng-click="saleLinkClick(release.links[0].Juno_Download)"><img src="images/sale_links/juno.png" height="20px"></button></div>
+					<div class="col-lg-6"><button class="sale_btm" ng-click="saleLinkClick(release.links[0].Amazon)"><img src="images/sale_links/amazon.png" height="20px"></button></div>
 				</div>
 			</div>
 			<br>

@@ -1,3 +1,28 @@
-<div class="container" ng-show="show">
-	
+<div class="container">
+	<div>
+		<h3>
+			<div class="col-lg-3">Date</div>
+			<div class="col-lg-3">Venue</div>
+			<div class="col-lg-3">Location</div>
+			<div class="col-lg-3">Details</div>
+		</h3>
+	</div>
+	<br>
+	<div class="row" ng-repeat="gig in gigs | orderBy: '-releaseDate'">
+	<br>
+		<div class="col-lg-3">
+			{{gig.date}}
+		</div>
+		<div class="col-lg-3">
+			{{gig.venue}}
+		</div>
+		<div class="col-lg-3">
+			{{gig.location}}
+		</div>
+		<div class="col-lg-3">
+			{{gig.details}}
+		</div>
+	</div>
+
+
 </div>

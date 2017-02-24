@@ -210,7 +210,7 @@ p {
     border: 1px solid;
 }
 
-.newsRow .releaseRow {
+.newsRow, .releaseRow {
     border-bottom: 1px dotted;
 }
 
@@ -224,5 +224,13 @@ p {
     max-height: 500px;
     overflow: auto;
     border: 0px solid;
+}
+
+.sale_btm {
+    width: 150px;
+}
+
+.navbar {
+    /*height: 100px;*/
 }
 
