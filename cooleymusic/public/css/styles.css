@@ -210,11 +210,11 @@ p {
     border: 1px solid;
 }
 
-.newsRow {
+.newsRow .releaseRow {
     border-bottom: 1px dotted;
 }
 
-.newsContainer, .mixesContainer {
+.newsContainer, .mixesContainer .releaseContainer {
     border: 0px solid;
     max-height: 500px;
     overflow: auto;

@@ -1,3 +1,38 @@
-<div class="container" id="releasesPage" ng-show="show">
-	
+<div class="container releasesContainer">
+	<div>
+
+		<div class="row releaseRow">
+			<h3>
+				<div class="col-lg-2">Release Date</div>
+				<div class="col-lg-2">Title</div>
+				<div class="col-lg-2">Label</div>
+				<div class="col-lg-1">Mixes</div>
+			</h3>
+		</div>
+		<br>
+		<div class="row releaseRow" ng-repeat="release in releases | orderBy: 'releaseDate'">
+			<div class="col-lg-2">
+				{{release.releaseDate | date:'EEE dd MMM, yyyy'}}<br>
+			</div>
+			<div class="col-lg-3">
+				{{release.title}}<br>
+			</div>
+			<div class="col-lg-3">
+				{{release.label}}<br>
+			</div>
+			<div class="col-lg-3">
+				<div class="row releaseRow" ng-repeat="mix in release.mixes">
+					<div class="col-lg-12">{{mix}}</div>
+				</div>
+			</div>
+			<div class="row releaseRow">
+				<div class="col-lg-12" ng-repeat="link in release.links">
+					<div class="col-lg-3" ng-repeat="(key, val) in link">
+						<a href="{{val}}">{{key}}</a>
+					</div>
+				</div>
+			</div>
+			<br>
+		</div>
+	</div>
 </div>
